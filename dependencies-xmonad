@@ -1,0 +1,32 @@
+# window manager
+xmonad-contrib
+
+# compositor
+compton
+
+# info display
+conky
+xmobar
+acpi
+ 
+# terminal (rxvt-unicode)
+urxvt
+
+# File manager
+ranger
+	highlight
+	img2text
+	w3m
+
+# scripts
+	curl
+	geoiplookup	
+
+# xinitrc
+	feh
+	numlockx
+	keynav
+	unclutter	
+
+vim
+	powerline-fonts-git (source code pro)

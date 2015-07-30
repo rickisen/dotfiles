@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#update path
+#export PATH=$(echo "$PATH":~/bin) &
+
+# enviorment variables
+export BROWSER=firefox &
+export EDITOR=vim &
+export TERMINAL=urxvt &
+export DE=xmonad &
+
+# set wallpaper
+feh --bg-scale ~/Pictures/Wallpaper/darker.tif & 
+conky --conf .conkyright.conkyrc &
+conky --conf .conkyleft.conkyrc &
+
+# keyboard and mouse modifications, (swedish keyboard)
+setxkbmap se &
+numlockx &
+keynav &
+unclutter &
+
+# Visual bling
+compton --vsync opengl &
+
+#audio
+pulseaudio --start &
+
+# menubar
+xmobar &
+
+# start wm
+exec xmonad

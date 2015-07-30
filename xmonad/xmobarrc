@@ -1,0 +1,136 @@
+Config { 
+
+   -- appearance
+     font = 	    "xft:Source Code Pro:size=10:hinting=true:antialias=true"
+   , bgColor =      "#202020"
+   , fgColor =      "#d8b008"
+   , position =     Bottom
+   , border =       TopB
+   , borderColor =  "grey"
+
+   -- layout
+   , sepChar =  "%"   -- delineator between plugin names and straight text
+   , alignSep = "}{"  -- separator between left-right alignment
+   , template = "%battery% %del% %multicpu% %del% %coretemp% %del% %memory% }{ %ip% %del% %date%  "
+
+   -- general behavior
+   , lowerOnStart =     True    -- send to bottom of window stack on start
+   , hideOnStart =      False   -- start with window unmapped (hidden)
+   , allDesktops =      True    -- show on all desktops
+   , overrideRedirect = True    -- set the Override Redirect flag (Xlib)
+   , pickBroadest =     False   -- choose widest display (multi-monitor)
+   , persistent =       True    -- enable/disable hiding (True = disabled)
+
+   -- color reference from Xdefaults
+   -- # Black
+   -- urxvt*color0: 			#454545
+   -- urxvt*color8: 			#1d202f
+   -- # Red
+   -- urxvt*color1: 			#f13a21
+   -- urxvt*color9: 			#ff361e
+   -- # Green second is not currently green
+   -- urxvt*color2: 			#93f91d
+   -- urxvt*color10: 			#ffc005 
+   -- # Yellow
+   -- urxvt*color3: 			#ffd00a
+   -- urxvt*color11: 			#93ff00
+   -- # Blue
+   -- urxvt*color4: 			#406ff8
+   -- urxvt*color12: 			#0071ff
+   -- # Magenta
+   -- urxvt*color5: 			#ec0048
+   -- urxvt*color13: 			#ef0051
+   -- # Cyan
+   -- urxvt*color6: 			#2aa7e7
+   -- urxvt*color14: 			#4bb8fd
+   -- # Grey/white
+   -- urxvt*color7: 			#f2f2f2
+   -- urxvt*color15: 			#a020f0
+   -- plugins
+   --   Numbers can be automatically colored according to their value. xmobar
+   --   decides color based on a three-tier/two-cutoff system, controlled by
+   --   command options:
+   --     --Low sets the low cutoff
+   --     --High sets the high cutoff
+   --
+   --     --low sets the color below --Low cutoff
+   --     --normal sets the color between --Low and --High cutoffs
+   --     --High sets the color above --High cutoff
+   --
+   --   The --template option controls how the plugin is displayed. Text
+   --   color can be set by enclosing in <fc></fc> tags. For more details
+   --   see http://projects.haskell.org/xmobar/#system-monitor-plugins.
+   , commands = 
+
+        -- weather monitor
+        [ Run Weather "RJTT" [ "--template", "<skyCondition> | <fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | 
+<fc=#4682B4><pressure></fc>hPa"
+                             ] 36000
+
+        -- network activity monitor (dynamic interface resolution)
+        , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+                             , "--Low"      , "1000"       -- units: kB/s
+                             , "--High"     , "5000"       -- units: kB/s
+                             , "--low"      , "#93f91d"
+                             , "--normal"   , "#ffd00a"
+                             , "--high"     , "#f13a21"
+                             ] 10
+
+        -- cpu activity monitor
+        , Run MultiCpu       [ "--template" , "Cpu: <total0>%|<total1>%"
+                             , "--Low"      , "50"         -- units: %
+                             , "--High"     , "85"         -- units: %
+                             , "--low"      , "#93f91d"
+                             , "--normal"   , "#ffd00a"
+                             , "--high"     , "#f13a21"
+                             ] 10
+
+	, Run Com 	     "cat" [ "/tmp/ipinfo.txt" ] "ip" 50
+
+	, Run Com 	     "echo" [ "<fc=grey>|</fc>" ] "del" 50
+
+        -- cpu core temperature monitor
+        , Run CoreTemp       [ "--template" , "Temp: <core0>°C|<core1>°C"
+                             , "--Low"      , "70"        -- units: °C
+                             , "--High"     , "80"        -- units: °C
+                             , "--low"      , "#93f91d"
+                             , "--normal"   , "#ffd00a"
+                             , "--high"     , "#f13a21"
+                             ] 50
+                          
+        -- memory usage monitor
+        , Run Memory         [ "--template" ,"Mem: <usedratio>%"
+                             , "--Low"      , "20"        -- units: %
+                             , "--High"     , "90"        -- units: %
+                             , "--low"      , "#93f91d"
+                             , "--normal"   , "#ffd00a"
+                             , "--high"     , "#f13a21"
+                             ] 10
+
+        -- battery monitor
+        , Run Battery        [ "--template" , "Batt: <acstatus>"
+                             , "--Low"      , "10"        -- units: %
+                             , "--High"     , "80"        -- units: %
+                             , "--low"      , "#f13a21"
+                             , "--normal"   , "#ffd00a"
+                             , "--high"     , "#93f91d"
+
+                             , "--" -- battery specific options
+                                       -- discharging status
+                                       , "-o"	, "<left>% (<timeleft>)"
+                                       -- AC "on" status
+                                       , "-O"	, "<fc=#dAA520>Charging</fc>"
+                                       -- charged status
+                                       , "-i"	, "<fc=#93f91d>Charged</fc>"
+                             ] 50
+
+        -- time and date indicator 
+        --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
+        , Run Date           "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
+
+        -- keyboard layout indicator
+        , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
+                             , ("us"         , "<fc=#8B0000>US</fc>")
+                             ]
+        ]
+   }
