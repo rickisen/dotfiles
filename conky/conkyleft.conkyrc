@@ -48,43 +48,34 @@ default_color d8b008
 
 
 TEXT
-#title
-# oldcolor 2aa7e7
-${color d8b008}${font Source Code Pro:size=8:bold}Arch Linux ${color grey}${hr 2}${color d8b008}${font}${color grey} 
-#clock/date
-#
-${color grey}${font Source Code Pro:bold:pixelsize=40}${time %H:%M}${font} ${font Source Code Pro:bold:pixelsize=11}${time %a %d %b %Y}${font} 
-${color grey} ${hr 2} ${color d8b008}
+#Time
+${color d8b008}${font Source Code Pro:size=8:bold}Time ${color grey}${hr 2}${color d8b008}${font}${color grey} 
+${offset 10}${color grey}${font Source Code Pro:bold:pixelsize=40}${time %H:%M}${font} ${font Source Code Pro:bold:pixelsize=11}${color d8b008}${time %a %d %b %Y}${font} 
 #CPU
-#
-${voffset 4}CPU 01${offset 2} ${cpubar cpu1 9,140} ${cpu cpu1}%
-${voffset 4}CPU 02${offset 2} ${cpubar cpu2 9,140} ${cpu cpu2}%
-${voffset 4}CPU 03${offset 2} ${cpubar cpu3 9,140} ${cpu cpu3}%
-${voffset 4}CPU 04${offset 2} ${cpubar cpu4 9,140} ${cpu cpu4}%
-${voffset 4}CPU 05${offset 2} ${cpubar cpu5 9,140} ${cpu cpu5}%
-${voffset 4}CPU 06${offset 2} ${cpubar cpu6 9,140} ${cpu cpu6}%
-${voffset 4}CPU 07${offset 2} ${cpubar cpu7 9,140} ${cpu cpu7}%
-${voffset 4}CPU 08${offset 2} ${cpubar cpu8 9,140} ${cpu cpu8}%
-${color grey} ${hr 2} ${color d8b008}
+${color d8b008}${font Source Code Pro:size=8:bold}CPU ${color grey}${hr 2}${color d8b008}${font}
+${offset 10}${color grey}01${color d8b008} ${cpubar cpu1 9,190} ${cpu cpu1}%
+${offset 10}${color grey}02${color d8b008} ${cpubar cpu2 9,190} ${cpu cpu2}%
+${offset 10}${color grey}03${color d8b008} ${cpubar cpu3 9,190} ${cpu cpu3}%
+${offset 10}${color grey}04${color d8b008} ${cpubar cpu4 9,190} ${cpu cpu4}%
+${offset 10}${color grey}05${color d8b008} ${cpubar cpu5 9,190} ${cpu cpu5}%
+${offset 10}${color grey}06${color d8b008} ${cpubar cpu6 9,190} ${cpu cpu6}%
+${offset 10}${color grey}07${color d8b008} ${cpubar cpu7 9,190} ${cpu cpu7}%
+${offset 10}${color grey}08${color d8b008} ${cpubar cpu8 9,190} ${cpu cpu8}%
 #memmory
-#
-${voffset 3}MEM ${offset 5}${membar 9,140} $memperc%
-${color grey} ${hr 2} ${color d8b008}
+${voffset 5}${color d8b008}${font Source Code Pro:size=8:bold}Memory ${color grey}${hr 2}${color d8b008}${font}
+${offset 10}${membar 9,225} $memperc%
 #IP
-#
-${voffset 4}Downspeed ${downspeed wlp2s0} ${offset 2} 
-${downspeedgraph wlp2s0 100,260} 
-${voffset 4}Upspeed ${upspeed wlp2s0} ${offset 2} 
-${upspeedgraph wlp2s0 100,260} 
-${voffset 4}${offset 5}IP: ${addr wlp2s0}${offset 6}
-${color grey} ${hr 2} ${color d8b008}
+${voffset 5}${color d8b008}${font Source Code Pro:size=8:bold}Network ${color grey}${hr 2}${color d8b008}${font}
+${color grey}${offset 10}Downspeed ${color d8b008}${downspeed wlp2s0} 
+${offset 10}${downspeedgraph wlp2s0 100,250} 
+${color grey}${offset 10}Upspeed ${color d8b008}${upspeed wlp2s0} 
+${offset 10}${upspeedgraph wlp2s0 100,250} 
+${color grey}${offset 10}IP: ${color d8b008}${addr wlp2s0}${offset 6}
 #kernel
-#
-${color grey}${voffset 4}HOST:${offset 4}${nodename}${color d8b008}
-${voffset 3}${offset 30}KERNEL: $kernel 
-${voffset 3}${offset 30}UPTIME: $uptime
-${color grey} ${hr 2} ${color d8b008}
-#
+${voffset 5}${color d8b008}${font Source Code Pro:size=8:bold}This Computer ${color grey}${hr 2}${color d8b008}${font}
+${offset 10}${color grey}HOST:   ${color d8b008}${nodename}${color d8b008}
+${offset 10}${color grey}KERNEL: ${color d8b008}$kernel 
+${offset 10}${color grey}UPTIME: ${color d8b008}$uptime
 # Journal
-${color grey}${voffset 4}Journal:
-${color d8b008}${voffset 8}${exec journalctl -n 10 | awk '{ print $5  }' | sed -e s?"\[.*"?""? }
+${voffset 5}${color d8b008}${font Source Code Pro:size=8:bold}System Log ${color grey}${hr 2}${color d8b008}${font}
+${color d8b008}${execpi 2 journalctl -n 18 | awk '{ printf "\$\{color grey\} %s \$\{color d8b008\} %s\n" " ", substr($5,0,15), (substr( $0, length($0) - 14, length($0) ))  }' }
