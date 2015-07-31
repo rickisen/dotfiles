@@ -43,7 +43,7 @@ bindsym $mod+m exec urxvt -e alsamixer
 bindsym $mod+w exec urxvt -e wicd-curses
 
 # Background processes
-bindsym $mod+i exec /home/rickard/bin/trackpad-toggle.sh
+bindsym $mod+i exec ~/bin/trackpad-toggle.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -130,7 +130,7 @@ client.unfocused        #222222 #BBBBBB #FFFFFF #C86045
 client.urgent           #C84065 #C84065 #FFFFFF #C86045
 client.placeholder	#222222 #D8B070 #E4F8FF #C86045 
 
-new_window pixel 2
+new_window 1pixel 
 
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode

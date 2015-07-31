@@ -25,7 +25,7 @@ URxvt.letterSpace: -1
 urxvt*fading: 			15 
 
 # distance between text and the edges of the window
-URxvt*internalBorder: 		5
+URxvt*internalBorder: 		3
 
 # input related, and XIM fonts
 URxvt.inputMethod: 		fcitx
@@ -58,7 +58,7 @@ URxvt.keysym.M-s:           	perl:keyboard-select:search
 # Colorscheme (based on tango)
 URxvt*intensityStyles: 		false
 
-URxvt.background: 		#202020
+URxvt.background: 		#282828
 
 !! bright grey/white
 urxvt*foreground: 		#dddddd
