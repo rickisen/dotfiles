@@ -1,5 +1,6 @@
 # window manager
 xmonad-contrib
+or i3-feature-54 (branch of i3-gaps-next)
 
 # compositor
 compton
