@@ -1,6 +1,13 @@
 # Simple script for making softlinks to the 
 # correct positions for the dotfiles, as well as adding the infamus dot to them
 
+# xmonad config
+ln -s xmonad/xmonad.hs ~/.xmonad/xmonad.hs
+
+# i3-gaps
+ln -s i3/config ~/.i3/config
+ln -s i3/i3status.cfg ~/.i3/i3status.cfg
+
 # compton
 ln -s compton/compton.conf ~/.compton.conf
 
@@ -28,5 +35,3 @@ ln -s vim ~/.vim
 ln -s X/xinitrc ~/.xinitrc
 ln -s X/Xdefaults ~/.Xdefaults
 
-# xmonad config
-ln -s xmonad/xmonad.hs ~/.xmonad/xmonad.hs
