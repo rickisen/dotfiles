@@ -90,4 +90,4 @@ ${offset 10}${color grey}${top name 7}${color d8b008}${top pid 7} ${top cpu 7}
 ${offset 10}${color grey}${top name 8}${color d8b008}${top pid 8} ${top cpu 8} 
 # calendar
 ${voffset 5}${color c86045}${font Source Code Pro:size=8:bold}Calendar ${hr 1}${color d8b008}${font}
-${color d8b008}${voffset 8}${execpi 100 cal | sed -e 's?.*?      &?g' -e s?`date "+%d"`?"$\{color grey\}&$\{color d8b008\}"?g } 
+${color d8b008}${voffset 8}${execpi 100 cal | sed -e 's?.*?      &?g' -e s?`date "+%-d"`?"$\{color grey\}&$\{color d8b008\}"?g } 
