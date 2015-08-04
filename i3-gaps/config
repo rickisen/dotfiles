@@ -40,7 +40,9 @@ bindsym $mod+s exec urxvt -e ranger
 bindsym $mod+p exec urxvt -e htop
 bindsym $mod+c exec urxvt -e vimpc
 bindsym $mod+m exec urxvt -e alsamixer
+bindsym $mod+Shift+m exec urxvt -e pulsemixer
 bindsym $mod+w exec urxvt -e wicd-curses
+bindsym $mod+n exec urxvt -e journalctl -f
 
 # Background processes
 bindsym $mod+i exec ~/bin/trackpad-toggle.sh
