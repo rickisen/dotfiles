@@ -82,4 +82,4 @@ ${offset 10}${color grey}KERNEL: ${color d8b008}$kernel
 ${offset 10}${color grey}UPTIME: ${color d8b008}$uptime
 # Journal
 ${voffset 5}${color c86045}${font Source Code Pro:size=8:bold}System Log ${hr 1}${color d8b008}${font}
-${color d8b008}${execpi 2 journalctl -n 14 | awk '{ printf "\$\{color grey\} %s \$\{color d8b008\} %s\n" " ", substr($5,0,15), (substr( $0, length($0) - 14, length($0) ))  }' }
+${execpi 2 journalctl -n 15 | ~/bin/dotfiles/conky/plugin/MiniJournal 31 '${color grey}' '${color d8b008}' }
