@@ -30,7 +30,8 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+c kill
 
 # start dmenu 
-bindsym $mod+space exec dmenu_run
+#bindsym $mod+space exec dmenu_run
+bindsym $mod+space exec rofi -show run
 
 # apps
 bindsym $mod+a exec firefox
