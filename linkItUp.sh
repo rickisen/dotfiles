@@ -33,5 +33,5 @@ ln -s vim ~/.vim
 
 # X
 ln -s X/xinitrc ~/.xinitrc
-ln -s X/Xdefaults ~/.Xdefaults
+ln -s X/Xresources ~/.Xresources
 
