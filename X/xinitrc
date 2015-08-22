@@ -1,18 +1,19 @@
 #!/bin/bash
 
 #update path
-#export PATH=$(echo "$PATH":~/bin) &
+#export PATH=$(echo "$PATH":/home/rickard/bin) &
+
+#read in resources
+[[ -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
 
 # enviorment variables
 export BROWSER=firefox &
 export EDITOR=vim &
 export TERMINAL=urxvt &
-export DE=xmonad &
+export DE=i3 &
 
-# set wallpaper
-feh --bg-scale ~/Pictures/Wallpaper/darker.tif & 
-conky --conf .conkyright.conkyrc &
-conky --conf .conkyleft.conkyrc &
+# set up dual monitors
+.screenlayout/H*.sh &
 
 # keyboard and mouse modifications, (swedish keyboard)
 setxkbmap se &
@@ -21,13 +22,22 @@ keynav &
 unclutter &
 
 # Visual bling
-compton --vsync opengl &
+compton --config ~/.compton.conf --backend glx --vsync opengl -b &
+#xcalib .color/Eizo-ferrari.icc &
+
 
 #audio
 pulseaudio --start &
 
-# menubar
-xmobar &
+# bar
+#xmobar &
+
+# set wallpaper
+#feh --bg-tile ~/Pictures/wallpaper/Arch-ricki.png
+./.fehbg
+conky --conf .conkyleft.conkyrc &
+conky --conf .conkyright.conkyrc &
 
 # start wm
-exec xmonad
+exec i3
+
