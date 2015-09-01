@@ -72,8 +72,9 @@ ${offset 10}${upspeedgraph wlp2s0 100,250}
 ${color grey}${offset 10}IP: ${color d8b008}${addr wlp2s0}${offset 6}
 # Battery
 ${voffset 10}${color c86045}${font Source Code Pro:size=8:bold}Battery ${hr 1}${color d8b008}${font}
-${color d8b008}${execpi 10  acpi -b | awk '{print $3, $4, $5}' }
+${offset 10}${color d8b008}${execpi 10  acpi -b | awk '{print $3, $4, $5}' }
+${offset 10}${execbar acpi -b | awk '{print $4}' | tr -d "%," } 
 # Journal
 ${voffset 10}${color c86045}${font Source Code Pro:size=8:bold}System Log ${hr 1}${color d8b008}${font}
-${color d8b008}${execpi 1 journalctl -n 22 | ~/bin/conky/plugin/MiniJournal 31 '${color grey}' '${color d8b008}' }
+${color d8b008}${execpi 1 journalctl -n 21 | ~/bin/conky/plugin/MiniJournal 31 '${color grey}' '${color d8b008}' }
 
