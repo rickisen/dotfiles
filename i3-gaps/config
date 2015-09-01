@@ -176,11 +176,11 @@ bar {
 
 
 focus_follows_mouse no
-gaps inner 10
-workspace 1 gaps outer horizontal 270 
-workspace_auto_back_and_forth yes
-default_orientation vertical
+gaps inner 10 
+gaps outer horizontal 270 
+#workspace 1 gaps outer horizontal 270 
+#workspace_auto_back_and_forth no
+#default_orientation vertical
 
 bindsym $mod+g gaps outer current horizontal set 270
 bindsym $mod+Shift+g gaps outer current horizontal set 0
-

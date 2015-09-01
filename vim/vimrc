@@ -24,6 +24,14 @@ Plugin 'Syntastic'
 
 Plugin 'Colorizer--Brabandt'
 
+Plugin 'html_autoclosetag.vim'
+
+Plugin 'closetag.vim'
+
+Plugin 'AutoComplPop'
+
+Plugin 'camelcasemotion'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -59,5 +67,16 @@ let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 '
 
 let g:EclimCompletionMethod = 'omnifunc'
+
+" frontend settings
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd Filetype css,html setlocal tabstop=4
+au FileType xhtml,xml,html so ~/.vim/bundle/HTML-AutoCloseTag/ftplugin/html_autoclosetag.vim
+
+"camelcasemotion
+nmap c,w c,e
+omap i,w i,e
+xmap i,w i,e 
 
 colorscheme atom-dark-256

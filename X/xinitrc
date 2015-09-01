@@ -25,12 +25,11 @@ unclutter &
 compton --config ~/.compton.conf --backend glx --vsync opengl -b &
 #xcalib .color/Eizo-ferrari.icc &
 
-
 #audio
 pulseaudio --start &
 
-# bar
-#xmobar &
+dunst -config .dunst/dunstrc &
+nm-applet &
 
 # set wallpaper
 #feh --bg-tile ~/Pictures/wallpaper/Arch-ricki.png
