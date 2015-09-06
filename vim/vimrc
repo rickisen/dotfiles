@@ -28,7 +28,8 @@ Plugin 'html_autoclosetag.vim'
 
 Plugin 'closetag.vim'
 
-Plugin 'AutoComplPop'
+"Plugin 'AutoComplPop'
+Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'camelcasemotion'
 
