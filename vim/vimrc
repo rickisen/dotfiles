@@ -50,6 +50,7 @@ filetype plugin indent on    " required
 syntax on
 "set number
 set rnu
+set nowrap
 
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
 	set t_Co=256
@@ -72,7 +73,7 @@ let g:EclimCompletionMethod = 'omnifunc'
 " frontend settings
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd Filetype css,html setlocal tabstop=4
+autocmd Filetype css,html setlocal tabstop=2
 au FileType xhtml,xml,html so ~/.vim/bundle/HTML-AutoCloseTag/ftplugin/html_autoclosetag.vim
 
 "camelcasemotion
