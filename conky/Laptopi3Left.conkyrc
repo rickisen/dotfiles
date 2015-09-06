@@ -1,5 +1,5 @@
 background yes
-update_interval 1
+update_interval 5
 
 cpu_avg_samples 2
 net_avg_samples 2
@@ -12,7 +12,7 @@ no_buffers yes
 text_buffer_size 1200
 imlib_cache_size 0
 
-own_window_class Conky
+#own_window_class Conky
 own_window yes
 own_window_type override
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
@@ -47,6 +47,8 @@ xftalpha 1
 uppercase no
  
 default_color d8b008
+default_bar_height 9
+default_bar_width 190
 
 
 TEXT
@@ -70,11 +72,13 @@ ${offset 10}${downspeedgraph wlp2s0 100,250}
 ${color grey}${offset 10}Upspeed ${color d8b008}${upspeed wlp2s0} 
 ${offset 10}${upspeedgraph wlp2s0 100,250} 
 ${color grey}${offset 10}IP: ${color d8b008}${addr wlp2s0}${offset 6}
+${color grey}${offset 10}WIFI AP: ${color d8b008}${wireless_essid wlp2s0}${offset 6}
+${offset 10}${color grey}Link: ${color d8b008}${wireless_link_bar 9,170 wlp2s0} ${wireless_link_qual_perc wlp2s0}%
 # Battery
 ${voffset 10}${color c86045}${font Source Code Pro:size=8:bold}Battery ${hr 1}${color d8b008}${font}
-${offset 10}${color d8b008}${execpi 10  acpi -b | awk '{print $3, $4, $5}' }
+${offset 10}${color grey}Bat: ${color d8b008}${execpi 10  acpi -b | awk '{print $3, $4, $5}' }
 ${offset 10}${execbar acpi -b | awk '{print $4}' | tr -d "%," } 
 # Journal
 ${voffset 10}${color c86045}${font Source Code Pro:size=8:bold}System Log ${hr 1}${color d8b008}${font}
-${color d8b008}${execpi 1 journalctl -n 21 | ~/bin/conky/plugin/MiniJournal 31 '${color grey}' '${color d8b008}' }
+${color d8b008}${execpi 1 journalctl -n 19 | ~/bin/conky/plugin/MiniJournal 31 '${color grey}' '${color d8b008}' }
 

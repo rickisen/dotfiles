@@ -48,7 +48,7 @@ URxvt.keysym.M-Escape:      	perl:keyboard-select:activate
 URxvt.keysym.M-s:           	perl:keyboard-select:search
 
 !! uncomment for "true trancparency"
-!!URxvt.background: 		rgba:2800/2900/3000/efef
+!!URxvt.background: 		rgba:2800/2800/2800/efef
 !!URxvt.depth: 			32
 
 !! uncomment for "native-transperancy" (non compositing systems)

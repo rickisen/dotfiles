@@ -162,14 +162,14 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status -c .i3/i3status.cfg
 	colors {
-		background #363636
+		background #282828
 		statusline #ffffff
 		separator #666666
 
-		focused_workspace  #4c7899 #285577 #ffffff
-		active_workspace   #333333 #5f676a #ffffff
-		inactive_workspace #333333 #222222 #888888
-		urgent_workspace   #2f343a #900000 #ffffff
+		focused_workspace  #D8B008 #282828 #D8B008 
+		active_workspace   #333333 #282828 #aaaaaa 
+		inactive_workspace #101010 #202020 #D8B070 
+		urgent_workspace   #C84065 #282828 #C84065 
 	    }
 }
 
