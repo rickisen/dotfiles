@@ -1,9 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/rickisen'
-let g:netrw_dirhist_2='/home/rickisen/.themes'
-let g:netrw_dirhist_3='/home/rickisen/.themes/Arc-Snark'
-let g:netrw_dirhist_4='/home/rickisen/.themes/Arc-Snark/gtk-3.0'
-let g:netrw_dirhist_5='/home/rickisen'
-let g:netrw_dirhist_6='/home/rickisen/tmp/difftest/mapp1'
-let g:netrw_dirhist_7='/home/rickisen/tmp/difftest/mapp2'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/rickisen/programming/FED15/html-css/prov-test'
