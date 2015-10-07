@@ -129,7 +129,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # color class           border  backgr. text    indicator
 client.focused          #FFFFFF #D8B008 #FFFFFF #C86045 
 client.focused_inactive #222222 #D8B070 #E4F8FF #C86045
-client.unfocused        #222222 #BBBBBB #FFFFFF #C86045
+client.unfocused        #222222 #101010 #FFFFFF #C86045
 client.urgent           #C84065 #C84065 #FFFFFF #C86045
 client.placeholder	#222222 #D8B070 #E4F8FF #C86045 
 
@@ -184,3 +184,5 @@ gaps outer horizontal 270
 
 bindsym $mod+g gaps outer current horizontal set 270
 bindsym $mod+Shift+g gaps outer current horizontal set 0
+bindsym $mod+Ctrl+g gaps inner current set 10
+bindsym $mod+Ctrl+Shift+g gaps inner current set 0
