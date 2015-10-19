@@ -1,15 +1,3 @@
-rename Disc 2
-rename Disc 3
-rename Ella And Louis.flac
-rename Struttin With Some Barbeque.flac
-rename Jeeps Blues.flac
-rename 01.Stompin At The Savoy.mp3
-rename Blue Skies.mp3
-rename Blue Skies2.mp3
-bulkrename 
-rename E.S.P.mp3
-rename Get Your Kicks on Route 66.mp3
-rename I Love You For Sentimental Reasons.mp3
 rename Unforgettable feat. Natalie Cole.mp3
 rename You Call It Madness But I Call It Love.mp3
 travel 
@@ -24,7 +12,6 @@ rename klar.html
 rename start.css
 rename klar.css
 mkdir copy
-open_with vim
 mkdir prov-test
 open_with vim svar
 shell vim svar.txt
@@ -37,7 +24,6 @@ mkdir pluggapa
 mkdir Documents
 rename phoneBu
 mkdir PhoneBu
-delete
 rename Documents2
 rename Pictures2
 mkdir pwal
@@ -48,3 +34,17 @@ mkdir dynweb
 shell lektion1
 mkdir lektion1
 shell vim notes
+open_with vlc
+rename test1
+rename test2.php
+rename symetri.php
+shell vim gissaSpelet.php
+delete
+open_with qpicview
+scout -aefiklst 
+open_with nvim
+shell nvim overide.css
+shell nvim .xini
+shell nvim .xinitrc
+search init
+open_with vim
