@@ -12,9 +12,6 @@ export EDITOR=vim &
 export TERMINAL=urxvt &
 export DE=i3 &
 
-# set up dual monitors
-.screenlayout/H*.sh &
-
 # keyboard and mouse modifications, (swedish keyboard)
 setxkbmap se &
 numlockx &

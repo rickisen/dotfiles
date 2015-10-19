@@ -98,7 +98,7 @@ urxvt*color15: 			#a020f0
 
 !! Rofi
 rofi.opacity: 90
-rofi.width: 50
+rofi.width: 1920
 rofi.lines: 20
 rofi.location: 2
 rofi.columns: 1
@@ -110,10 +110,9 @@ rofi.hlbg: #d8b008
 rofi.bc: #C86045
 rofi.bw: 1
 rofi.eh: 1
-rofi.padding: 2
-rofi.yoffset: 200
-rofi.xoffset: 0
-rofi.fixed-num-lines: false
+rofi.padding: 307
+rofi.yoffset: 0
+rofi.fixed-num-lines: true
 rofi.hmode: false
 rofi.terminal: urxvt
 rofi.ssh-set-title: true
