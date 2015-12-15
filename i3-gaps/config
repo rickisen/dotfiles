@@ -45,6 +45,9 @@ bindsym $mod+Shift+m exec urxvt -e pulsemixer
 bindsym $mod+w exec urxvt -e wicd-curses
 bindsym $mod+n exec urxvt -e journalctl -f
 
+# screenlock
+bindsym Ctrl+Alt+l exec ./home/rickisen/Sync/dotfiles/i3lock/lock.sh
+
 # Background processes
 bindsym $mod+i exec ~/bin/trackpad-toggle.sh
 
@@ -186,3 +189,4 @@ bindsym $mod+g gaps outer current horizontal set 270
 bindsym $mod+Shift+g gaps outer current horizontal set 0
 bindsym $mod+Ctrl+g gaps inner current set 10
 bindsym $mod+Ctrl+Shift+g gaps inner current set 0
+
