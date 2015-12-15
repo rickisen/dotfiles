@@ -35,7 +35,7 @@ conky --conf .conkyleft.conkyrc &
 conky --conf .conkyright.conkyrc &
 
 # locker script
-xautolock -time 10 -locker ~/Sync/dotfiles/i3lock/lock.sh
+xautolock -time 10 -locker ~/Sync/dotfiles/i3lock/lock.sh &
 
 # start wm
 exec i3
