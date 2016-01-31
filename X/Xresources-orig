@@ -59,32 +59,32 @@ URxvt.keysym.M-s:           	perl:keyboard-select:search
 
 !! Colorscheme 
 URxvt*intensityStyles: 		false
-URxvt.background: 		#261f1d
+URxvt.background: 		#282828
 
 !! bright grey/white
-urxvt*foreground: 		#f2edd8
+urxvt*foreground: 		#dddddd
 !! dark grey
-urxvt*color0: 			#030201
+urxvt*color0: 			#181201
 !! red
-urxvt*color1: 			#e45641
+urxvt*color1: 			#ff2a25
 !! green
 urxvt*color2: 			#93f91d
 !! yellow
-urxvt*color3: 			#f1a94e
+urxvt*color3: 			#ffc005
 !! blue
-urxvt*color4: 			#3987c0
+urxvt*color4: 			#1c8bee
 !! red/pink/purple
-urxvt*color5: 			#e44164
+urxvt*color5: 			#ff0064
 !! cyan
-urxvt*color6: 			#44b3c2
+urxvt*color6: 			#2aa7e7
 !! white
 urxvt*color7: 			#f2f2f2
 !! very dark blue
-urxvt*color8: 			#2f4a88
+urxvt*color8: 			#1d202f
 !! bright red
 urxvt*color9: 			#ff361e
 !! bright yellow
-urxvt*color10: 			#f1be38
+urxvt*color10: 			#e7bc09
 !! bright green
 urxvt*color11: 			#93ff00
 !! bright blue
@@ -98,6 +98,9 @@ urxvt*color15: 			#a020f0
 
 !! Rofi
 rofi.opacity: 90
+rofi.width: 1920
+rofi.lines: 20
+rofi.location: 2
 rofi.columns: 1
 rofi.font: Source Code Pro for Powerline 10
 rofi.fg: grey
@@ -107,6 +110,9 @@ rofi.hlbg: #d8b008
 rofi.bc: #C86045
 rofi.bw: 1
 rofi.eh: 1
+rofi.padding: 307
+rofi.yoffset: 0
+rofi.fixed-num-lines: true
 rofi.hmode: false
 rofi.terminal: urxvt
 rofi.ssh-set-title: true
