@@ -4,7 +4,11 @@
 # xmonad config
 #ln -sf xmonad/xmonad.hs ~/.xmonad/xmonad.hs
 
-mkdir ~/.i3 ~/.config ~/bin ~/bin/scripts ~/.vim
+mkdir ~/.i3 ~/.config ~/bin ~/bin/scripts ~/.vim ~/.moc
+
+# i3-gaps
+ln -sf moc/config ~/.moc/config
+ln -sf moc/themes ~/.moc/themes
 
 # i3-gaps
 ln -sf i3/config ~/.i3/config

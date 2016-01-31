@@ -1,13 +1,12 @@
 # window manager
-xmonad-contrib
-or i3-feature-54 (branch of i3-gaps-next)
+i3-feature-54 (branch of i3-gaps-next)
 
 # compositor
 compton
 
 # info display
 conky
-xmobar
+i3status
 acpi
  
 # terminal (rxvt-unicode)
@@ -15,19 +14,23 @@ urxvt
 
 # File manager
 ranger
-	highlight
-	img2text
-	w3m
+highlight
+img2text
+w3m
 
 # scripts
-	curl
-	geoiplookup	
+curl
+geoiplookup	
 
 # xinitrc
-	feh
-	numlockx
-	keynav
-	unclutter	
+feh
+numlockx
+keynav
+unclutter	
 
-vim
-	powerline-fonts-git (source code pro)
+# vim
+nvim (neovim)
+powerline-fonts-git (source code pro)
+
+# music
+moc
