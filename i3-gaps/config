@@ -39,7 +39,7 @@ bindsym $mod+a exec firefox
 #terminal-apps
 bindsym $mod+s exec urxvt -e ranger
 bindsym $mod+p exec urxvt -e htop
-bindsym $mod+c exec urxvt -e vimpc
+bindsym $mod+c exec urxvt -e mocp
 bindsym $mod+m exec urxvt -e alsamixer
 bindsym $mod+Shift+m exec urxvt -e pulsemixer
 bindsym $mod+w exec urxvt -e wicd-curses
@@ -183,7 +183,7 @@ gaps inner 10
 gaps outer horizontal 270 
 #workspace 1 gaps outer horizontal 270 
 #workspace_auto_back_and_forth no
-#default_orientation vertical
+default_orientation vertical
 
 bindsym $mod+g gaps outer current horizontal set 270
 bindsym $mod+Shift+g gaps outer current horizontal set 0
