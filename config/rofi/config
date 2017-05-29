@@ -1,0 +1,30 @@
+include ~/.config/rofi/themes/gruvbox-dark-soft.theme
+
+rofi.opacity: 100
+rofi.columns: 1
+rofi.font: Source Code Pro for Powerline 10
+rofi.bw: 1
+rofi.eh: 1
+rofi.hmode: false
+rofi.terminal: roxterm
+rofi.ssh-set-title: true
+rofi.key: F12
+rofi.rkey: mod1+F2
+rofi.skey: mod1+F3
+
+!rofi.fg: #ebdbb2
+!rofi.bg: #282828
+!rofi.hlfg: #fe8019
+!rofi.hlbg: #282828
+!rofi.bc: #ebdbb2
+
+! Enable the extended coloring options
+rofi.color-enabled: true
+
+!                  bg       border   separator
+rofi.color-window: #282828, #a89984, #a89984
+
+!                  bg       fg       bg-alt   hl-bg    hl-fg
+rofi.color-normal: #282828, #ebdbb2, #32302f, #665c54, #fbf1c7
+rofi.color-active: #d79921, #282828, #d79921, #fabd2f, #282828
+rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828

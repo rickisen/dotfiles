@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#read in resources
+[[ -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
+
+# enviorment variables
+export BROWSER=firefox &
+export EDITOR=vim &
+export TERMINAL=roxterm &
+export DE=i3 &
+
+# keyboard and mouse modifications, (swedish keyboard)
+# setxkbmap se &
+setxkbmap gb &
+numlockx &
+keynav &
+unclutter &
+
+# Visual bling
+compton --config ~/.compton.conf --backend glx --vsync opengl -b &
+killall xiccd
+xiccd & # color correction
+
+#audio
+pulseaudio --start &
+
+dunst -config .dunst/dunstrc &
+nm-applet &
+
+# set wallpaper
+./.fehbg
+# conky --conf .conkyleft.conkyrc &
+# conky --conf .conkyright.conkyrc &
+
+# locker script
+xautolock -time 15 -locker ~/Sync/dotfiles/i3lock/lock-trans.sh &
+
+#autostart
+#hexchat --minimize=2 &
+

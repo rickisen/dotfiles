@@ -1,0 +1,14 @@
+[roxterm profile]
+font=Source Code Pro for Powerline Medium 10
+colour_scheme=gruvbox_official
+hide_menubar=1
+always_show_tabs=0
+show_add_tab_btn=0
+width=80
+scrollbar_pos=0
+saturation=1.000000
+cursor_blink_mode=1
+cursor_shape=0
+allow_bold=1
+backspace_binding=1
+delete_binding=0

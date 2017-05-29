@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#read in resources
+[[ -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
+
+# enviorment variables
+export BROWSER=firefox &
+export EDITOR=nvim &
+export TERMINAL=urxvt &
+export DE=i3 &
+
+# keyboard and mouse modifications, (swedish keyboard)
+setxkbmap gb &
+numlockx &
+keynav &
+unclutter &
+
+#audio
+pulseaudio --start &
+
+dunst -config .dunst/dunstrc &
+nm-applet &
+
+# start wm
+exec i3
+

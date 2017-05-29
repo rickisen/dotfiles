@@ -1,0 +1,214 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+#super
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below. ISO 10646 = Unicode
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, if you need a lot of unicode glyphs or
+# right-to-left text rendering, you should instead use pango for rendering and
+# chose a FreeType font, such as:
+# font pango:DejaVu Sans Mono 10
+# font pango:Sauce Code Powerline, bold 8
+font pango:Cantarell, 8
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# size of floating windows
+floating_minimum_size 350 x 200
+# floating_maximum_size 1920 x 1080
+
+# start a terminal
+bindsym $mod+Return exec roxterm --separate
+
+# kill focused window
+bindsym $mod+Shift+c kill
+
+# start dmenu/rofi
+#bindsym $mod+space exec dmenu_run
+bindsym $mod+space exec rofi -show run
+
+# apps
+bindsym $mod+a exec firefox
+
+#terminal-apps
+bindsym $mod+s       exec roxterm --separate -e ranger
+bindsym $mod+p       exec roxterm --separate -e htop
+bindsym $mod+c       exec roxterm --separate -e ~/Sync/dotfiles/scripts/cmus-launcher/cmus-launcher.sh
+bindsym $mod+Shift+m exec roxterm --separate -e alsamixer
+bindsym $mod+m       exec roxterm --separate -e pulsemixer
+bindsym $mod+w       exec roxterm --separate -e wicd-curses
+bindsym $mod+n       exec roxterm --separate -e journalctl -f
+
+# change rotation of current display (output) with xrandr
+bindsym $mod+Ctrl+h exec ~/programming/i3-workspace-rotate/i3-workspace-rotate.sh left
+bindsym $mod+Ctrl+j exec ~/programming/i3-workspace-rotate/i3-workspace-rotate.sh normal
+bindsym $mod+Ctrl+k exec ~/programming/i3-workspace-rotate/i3-workspace-rotate.sh inverted
+bindsym $mod+Ctrl+l exec ~/programming/i3-workspace-rotate/i3-workspace-rotate.sh right
+
+# screenlock
+bindsym $mod+Ctrl+Shift+l exec ~/Sync/dotfiles/i3lock/lock-trans.sh
+
+# Background processes
+bindsym $mod+b       exec setxkbmap se
+bindsym $mod+Shift+b exec setxkbmap gb
+
+# Background processes
+bindsym $mod+i exec ~/bin/trackpad-toggle.sh
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+Shift+v split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+w layout tabbed
+bindsym $mod+e       layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+Tab focus mode_toggle
+
+# focus the parent container
+bindsym $mod+Shift+p focus parent
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+Ctrl+q reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+q restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# color class           border  backgr. text    indicator
+client.focused          #458588 #458588 #b0ceb6 #83a598
+client.focused_inactive #1d2021 #1d2021 #83a598 #282828
+client.unfocused        #1d2021 #1d2021 #d8d5cd #282828
+client.urgent           #cc241d #cc241d #ebdbb2 #ebdbb2
+client.placeholder      #1d2021 #1d2021 #d3869b #282828
+
+# default border width
+new_float  normal 2
+new_window pixel 2
+
+# These bindings trigger as soon as you enter the resize mode
+mode "resize" {
+  bindsym $mod+h resize shrink width  10 px or 10 ppt
+  bindsym $mod+j resize grow   height 10 px or 10 ppt
+  bindsym $mod+k resize shrink height 10 px or 10 ppt
+  bindsym $mod+l resize grow   width  10 px or 10 ppt
+  bindsym Left   resize shrink width  10 px or 10 ppt
+  bindsym Down   resize grow   height 10 px or 10 ppt
+  bindsym Up     resize shrink height 10 px or 10 ppt
+  bindsym Right  resize grow   width  10 px or 10 ppt
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+  status_command i3status -c .config/i3/i3status.cfg
+    colors {
+      background #3c3836
+        statusline #ebdbb2
+        separator #928374
+
+        focused_workspace  #928374 #504945 #ebdbb2
+        active_workspace   #928374 #928374 #ebdbb2
+        inactive_workspace #928374 #928374 #1d2021
+        urgent_workspace   #ebdbb2 #fb4934 #282828
+    }
+}
+
+focus_follows_mouse no
+default_orientation auto
+
+# gaps outer 10
+gaps inner 10
+
+# feature 54 specific
+# gaps outer horizontal 270
+# workspace 3 gaps outer horizontal 0
+# workspace 2 gaps outer horizontal 0
+# workspace 1 gaps outer vertical 0
+
+# bindsym $mod+g gaps outer current horizontal set 270
+bindsym $mod+Shift+g gaps inner current set 0
+bindsym $mod+Ctrl+Shift+g gaps inner current set 10
+
+# bindsym $mod+Ctrl+g gaps inner current set 10
+# bindsym $mod+Ctrl+Shift+g gaps inner current set 0; border pixel 2 ; gaps outer current horizontal set 0
+
+# bindsym $mod+Shift+g floating toggle, resize set 1300px 1020px, move position center
+bindsym $mod+g floating toggle, resize set 1300px 1020px, move position center
+
+bindsym $mod+y border normal 2
+bindsym $mod+Shift+y border pixel 2
+
+for_window [class=".*"] title_format <span size="xx-small">  </span><span size="large"> <b>%title</b></span>  -  %class
+
+# smart_borders on

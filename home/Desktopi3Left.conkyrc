@@ -1,0 +1,85 @@
+background yes
+update_interval 1
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 1200
+imlib_cache_size 0
+
+own_window_class Conky
+own_window yes
+#own_window_type normal
+own_window_type override
+own_window_argb_visual yes
+own_window_argb_value 255
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+ 
+ 
+border_inner_margin 0
+border_outer_margin 0
+ 
+minimum_size  1080
+maximum_width 260
+ 
+alignment top_left
+gap_x 10
+gap_y 10
+
+draw_outline no
+draw_borders no
+draw_graph_borders no
+draw_shades no
+
+
+use_xft yes
+xftfont Source Code Pro:size=10:bold
+xftalpha 1
+
+uppercase no
+ 
+default_color fe8019
+
+
+TEXT
+#Time
+${voffset 5}${color 928374}${font Source Code Pro:size=8:bold}Time ${hr 1}${color fe8019}${font}${color ebdbb2} 
+${voffset 1}${offset 10}${color ebdbb2}${font Source Code Pro:bold:pixelsize=40}${time %H:%M}${font} ${font Source Code Pro:bold:pixelsize=11}${color fe8019}${time %a %d %b %Y}${font} 
+#CPU
+${voffset 5}${color 928374}${font Source Code Pro:size=8:bold}CPU ${hr 1}${color fe8019}${font}
+${offset 10}${color cc241d}01${color 504945} ${cpubar cpu1 9,190} ${color fe8019}${cpu cpu1}%
+${offset 10}${color cc241d}02${color 504945} ${cpubar cpu2 9,190} ${color fe8019}${cpu cpu2}%
+${offset 10}${color cc241d}03${color 504945} ${cpubar cpu3 9,190} ${color fe8019}${cpu cpu3}%
+${offset 10}${color cc241d}04${color 504945} ${cpubar cpu4 9,190} ${color fe8019}${cpu cpu4}%
+${offset 10}${color cc241d}05${color 504945} ${cpubar cpu5 9,190} ${color fe8019}${cpu cpu5}%
+${offset 10}${color cc241d}06${color 504945} ${cpubar cpu6 9,190} ${color fe8019}${cpu cpu6}%
+${offset 10}${color cc241d}07${color 504945} ${cpubar cpu7 9,190} ${color fe8019}${cpu cpu7}%
+${offset 10}${color cc241d}08${color 504945} ${cpubar cpu8 9,190} ${color fe8019}${cpu cpu8}%
+${offset 10}${color cc241d}09${color 504945} ${cpubar cpu9 9,190} ${color fe8019}${cpu cpu9}%
+${offset 10}${color cc241d}10${color 504945} ${cpubar cpu10 9,190}${color fe8019} ${cpu cpu10}%
+${offset 10}${color cc241d}11${color 504945} ${cpubar cpu11 9,190}${color fe8019} ${cpu cpu11}%
+${offset 10}${color cc241d}12${color 504945} ${cpubar cpu12 9,190}${color fe8019} ${cpu cpu12}%
+#memmory
+${voffset 5}${color 928374}${font Source Code Pro:size=8:bold}Memory ${hr 1}${color fe8019}${font}
+${color 504945}${offset 10}${membar 9,225}${color fe8019} $memperc%
+#Network
+${voffset 5}${color 928374}${font Source Code Pro:size=8:bold}Network ${hr 1}${color fe8019}${font}
+${color ebdbb2}${offset 10}Downspeed ${color b8bb26}${downspeed eno1} 
+${color ebdbb2}${offset 10}${downspeedgraph eno1 100,250} 
+${color ebdbb2}${offset 10}Upspeed ${color 83a598}${upspeed eno1} 
+${color 928374}${offset 10}${upspeedgraph eno1 100,250} 
+${color ebdbb2}${offset 10}IP: ${color fe8019}${addr eno1}${offset 6}
+#kernel
+${voffset 5}${color 928374}${font Source Code Pro:size=8:bold}This Computer ${hr 1}${color fe8019}${font}
+${offset 10}${color ebdbb2}HOST:   ${color 665c54}${nodename}${color fe8019}
+${offset 10}${color ebdbb2}KERNEL: ${color 665c54}$kernel 
+${offset 10}${color ebdbb2}UPTIME: ${color 83a598}$uptime
+# Journal
+${voffset 5}${color 928374}${font Source Code Pro:size=8:bold}System Log ${hr 1}${color fe8019}${font}
+${execpi 2 journalctl -n 15 | ~/bin/dotfiles/conky/plugin/MiniJournal 31 '${color fe8019}' '${color 928374}' }

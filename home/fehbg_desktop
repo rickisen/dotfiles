@@ -1,0 +1,2 @@
+#!/bin/sh
+feh  --image-bg black --bg-center '/home/rickard/Pictures/wallpaper/gruvbox-arch-wallpaper-darkest-light-bg.png' 

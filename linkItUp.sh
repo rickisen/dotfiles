@@ -1,42 +1,59 @@
-# Simple script for making softlinks to the 
-# correct positions for the dotfiles, as well as adding the infamus dot to them
+# Simple script for making softlinks to the
+# correct positions for the dotfiles, as well as adding the dot to them
 
-# xmonad config
-#ln -sf xmonad/xmonad.hs ~/.xmonad/xmonad.hs
+# ==================================================
+# Home folder
+# ==================================================
 
-mkdir ~/.i3 ~/.config ~/bin ~/bin/scripts ~/.vim ~/.moc
+ln -s home/compton.conf                ~/.compton.conf
+ln -s home/rtorrent.rc                 ~/.rtorrent.rc
+ln -s home/tmux.conf                   ~/.tmux.conf
+ln -s home/xprofile                    ~/.xprofile
+ln -s home/Xresources                  ~/.Xresources
+ln -s home/zshrc                       ~/.zshrc
 
-# i3-gaps
-ln -sf moc/config ~/.moc/config
-ln -sf moc/themes ~/.moc/themes
+if [[ $1 == "desktop" ]]; then
+  ln -s home/Desktopi3Left.conkyrc     ~/.conkyleft.conkyrc
+  ln -s home/Desktopi3Right.conkyrc    ~/.conkyright.conkyrc
+  ln -s home/fehbg_desktop             ~/.fehbg
+else
+  ln -s home/Laptopi3Left-new.conkyrc  ~/.conkyleft.conkyrc
+  ln -s home/Laptopi3Right-new.conkyrc ~/.conkyright.conkyrc
+  ln -s home/fehbg_laptop              ~/.fehbg
+fi
 
-# i3-gaps
-ln -sf i3/config ~/.i3/config
-ln -sf i3/i3status.cfg ~/.i3/i3status.cfg
+# ==================================================
+# config folder
+# ==================================================
 
-# compton
-ln -sf compton/compton.conf ~/.compton.conf
+ln -s config/cmus/autosave             ~/.config/cmus/autosave
+ln -s config/cmus/coffee.theme         ~/.config/cmus/coffee.theme
+ln -s config/cmus/gruvbox.theme        ~/.config/cmus/gruvbox.theme
 
-# conky
-ln -sf conky/conkyleft.conkyrc ~/.conkyleft.conkyrc
-ln -sf conky/conkyright.conkyrc ~/.conkyright.conkyrc
+ln -s config/ranger/rc.conf            ~/.config/ranger/rc.conf
+ln -s config/ranger/colorschemes       ~/.config/ranger/colorschemes
+ln -s config/ranger/rifle.conf         ~/.config/ranger/rifle.conf
+ln -s config/ranger/scope.sh           ~/.config/ranger/scope.sh
 
-# ranger
-ln -sf ranger/rc.conf ~/.config/ranger/rc.conf
-ln -sf ranger/rifle.conf ~/.config/ranger/rifle.conf
-ln -sf ranger/scope.sh ~/.config/ranger/scope.sh
+ln -s config/color                     ~/.config/color
+ln -s config/dunst                     ~/.config/dunst
+ln -s config/i3                        ~/.config/i3
+ln -s config/oomox                     ~/.config/oomox
+ln -s config/qutebrowser               ~/.config/qutebrowser
+ln -s config/rofi                      ~/.config/rofi
+ln -s config/roxterm.sourceforge.net   ~/.config/roxterm.sourceforge.net
+ln -s config/sway                      ~/.config/sway
 
-# scripts
-ln -sf scripts/ip-info/InternetInfo.sh ~/bin/InternetInfo.sh
-ln -sf scripts/ip-info/KillPing.sh ~/bin/KillPing.sh
-ln -sf scripts/sonyLaptop/keyboard-backlight-toggle.sh ~/bin/keyboard-backlight-toggle.sh
-ln -sf scripts/sonyLaptop/trackpad-toggle.sh ~/bin/trackpad-toggle.sh
+# ==================================================
+# themes folder
+# ==================================================
 
-# vim
-ln -sf vim/vimrc ~/.vimrc
-ln -sf vim ~/.vim
+ln -s themes/gtk3/oomox-gruvbox-gtk    ~/.themes/oomox-gruvbox-gtk
+ln -s themes/icons                     ~/.icons
 
-# X
-ln -sf X/xinitrc ~/.xinitrc
-ln -sf X/Xresources ~/.Xresources
+# ==================================================
+# scripts folder
+# ==================================================
+
+ln -s scripts                          ~/bin/dot-scripts
 

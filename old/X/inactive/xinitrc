@@ -1,0 +1,48 @@
+#!/bin/bash
+
+#update path
+#export PATH=$(echo "$PATH":/home/rickard/bin) &
+
+#read in resources
+[[ -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
+
+# enviorment variables
+export BROWSER=firefox &
+export EDITOR=nvim &
+export TERMINAL=urxvt &
+export DE=i3 &
+
+# keyboard and mouse modifications, (swedish keyboard)
+setxkbmap gb &
+numlockx &
+keynav &
+unclutter &
+
+# Visual bling
+compton --config ~/.compton.conf --backend glx --vsync opengl &
+#xcalib .color/Eizo-ferrari.icc &
+
+#audio
+pulseaudio --start &
+
+dunst -config .dunst/dunstrc &
+nm-applet &
+
+# set wallpaper
+#feh --bg-tile ~/Pictures/wallpaper/Arch-ricki.png
+./.fehbg
+# ./.screenlayout/hvv.sh &
+conky --conf .conkyleft.conkyrc &
+conky --conf .conkyright.conkyrc &
+
+# locker script
+xautolock -time 10 -locker ~/Sync/dotfiles/i3lock/lock.sh &
+
+# gnome keyring
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+dbus-update-activation-environment --systemd DISPLAY &
+
+# start wm
+exec i3
+
