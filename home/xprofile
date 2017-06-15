@@ -8,6 +8,7 @@ export BROWSER=firefox &
 export EDITOR=vim &
 export TERMINAL=roxterm &
 export DE=i3 &
+export QT_STYLE_OVERRIDE=gtk2
 
 # keyboard and mouse modifications, (swedish keyboard)
 # setxkbmap se &

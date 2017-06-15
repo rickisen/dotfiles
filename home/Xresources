@@ -1,33 +1,29 @@
-*customization: 		-color
+*customization:	-color
 
 !! Tells certain programs render in 256 color mode
-Xterm*termName: 		xterm-256color
-URxvt*termName: 		rxvt-256color
+Xterm*termName:	xterm-256color
+URxvt*termName:	rxvt-256color
 
-!! set the font 
-!! URxvt.font:     xft:Source Code Pro for Powerline-10:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:medium;antialias=False,xft:WenQuanYi Zen Hei-10:medium;antialias=True,xft:HanaMinA-10:medium;antialias:True,xft:HanaMinB-10:medium;antialias:True,xft:HanaMinPlus-10:medium;antialias:True
-!! URxvt.boldFont: xft:Source Code Pro for Powerline-10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:bold;antialias=False,xft:WenQuanYi Zen Hei-10:bold;antialias=True,xft:HanaMinA-10:bold;antialias:True,xft:HanaMinB-10:bold;antialias:True,xft:HanaMinPlus-10:bold;antialias:True
-URxvt.font:     xft:Sauce Code Powerline-10:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:medium;antialias=False,xft:WenQuanYi Zen Hei-10:medium;antialias=True,xft:HanaMinA-10:medium;antialias:True,xft:HanaMinB-10:medium;antialias:True,xft:HanaMinPlus-10:medium;antialias:True
-URxvt.boldFont: xft:Sauce Code Powerline-10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:bold;antialias=False,xft:WenQuanYi Zen Hei-10:bold;antialias=True,xft:HanaMinA-10:bold;antialias:True,xft:HanaMinB-10:bold;antialias:True,xft:HanaMinPlus-10:bold;antialias:True
+URxvt.font: xft:Source Code Pro-10:Semibold
+URxvt.boldFont: xft:Source Code Pro-10:Bold
 
 !! Fontrendering options (Xft)
-Xft.dpi:        		96
-Xft.lcdfilter: 			lcddefault
-Xft.antialias:  		true
-Xft.rgba:       		rgb
-Xft.hinting:    		true
-Xft.hintstyle:  		hintslight
-
-!! fix kerning, (make the space between letters look ok)
+Xft.dpi: 96
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
 URxvt.letterSpace: -1
 
-!! inactive fading 
+!! inactive fading
 !! darkens the colors of the window when not focused.
 !! higher number makes it darker
-urxvt*fading: 			15 
+! urxvt*fading: 			15
 
 !! distance between text and the edges of the window
-URxvt*internalBorder: 		3
+URxvt*internalBorder:	10
 
 !! input related, and XIM fonts
 URxvt.inputMethod: 		fcitx
@@ -50,51 +46,12 @@ URxvt.keysym.M-Escape:      	perl:keyboard-select:activate
 URxvt.keysym.M-s:           	perl:keyboard-select:search
 
 !! uncomment for "true trancparency"
-!!URxvt.background: 		rgba:2800/2800/2800/efef
-!!URxvt.depth: 			32
+! URxvt.background: 		rgba:2800/2800/2800/efef
+! URxvt.depth: 			32
 
 !! uncomment for "native-transperancy" (non compositing systems)
-!!URxvt*transparent: true
-!!URxvt*.shading:  10
-
-!! Colorscheme 
-URxvt*intensityStyles: 		false
-URxvt.background: 		#222222
-
-!! bright grey/white
-urxvt*foreground: 		#f2edd8
-!! dark grey
-urxvt*color0: 			#030201
-!! red
-urxvt*color1: 			#e45641
-!! green
-urxvt*color2: 			#93f91d
-!! yellow
-urxvt*color3: 			#f1a94e
-!! blue
-urxvt*color4: 			#3987c0
-!! red/pink/purple
-urxvt*color5: 			#e44164
-!! cyan
-urxvt*color6: 			#44b3c2
-!! white
-urxvt*color7: 			#f2f2f2
-!! very dark blue
-urxvt*color8: 			#2f4a88
-!! bright red
-urxvt*color9: 			#ff361e
-!! bright yellow
-urxvt*color10: 			#f1be38
-!! bright green
-urxvt*color11: 			#93ff00
-!! bright blue
-urxvt*color12: 			#0071ff
-!! pink/purple
-urxvt*color13: 			#ef0051
-!! bright cyan
-urxvt*color14: 			#4bb8fd
-!! purple
-urxvt*color15: 			#a020f0
+! URxvt*transparent: false
+! URxvt*.shading:  10
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-urxvt256.xresources
@@ -134,3 +91,40 @@ URxvt.color245: #928374
 URxvt.color246: #a89984
 URxvt.color248: #bdae93
 URxvt.color250: #d5c4a1
+
+! -----------------------------------------------------------------------------
+! File: gruvbox-dark.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
+
+! hard contrast: *background: #1d2021
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
