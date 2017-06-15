@@ -5,55 +5,65 @@
 # Home folder
 # ==================================================
 
-ln -s home/compton.conf                ~/.compton.conf
-ln -s home/rtorrent.rc                 ~/.rtorrent.rc
-ln -s home/tmux.conf                   ~/.tmux.conf
-ln -s home/xprofile                    ~/.xprofile
-ln -s home/Xresources                  ~/.Xresources
-ln -s home/zshrc                       ~/.zshrc
-
-if [[ $1 == "desktop" ]]; then
-  ln -s home/Desktopi3Left.conkyrc     ~/.conkyleft.conkyrc
-  ln -s home/Desktopi3Right.conkyrc    ~/.conkyright.conkyrc
-  ln -s home/fehbg_desktop             ~/.fehbg
+if [[ $1 == "force" ]] || [[ $2 == "force" ]]; then
+  args="-Tfrs"
 else
-  ln -s home/Laptopi3Left-new.conkyrc  ~/.conkyleft.conkyrc
-  ln -s home/Laptopi3Right-new.conkyrc ~/.conkyright.conkyrc
-  ln -s home/fehbg_laptop              ~/.fehbg
+  args="-Tirs"
+fi
+
+ln $args home/compton.conf                ~/.compton.conf
+ln $args home/rtorrent.rc                 ~/.rtorrent.rc
+ln $args home/tmux.conf                   ~/.tmux.conf
+ln $args home/xprofile                    ~/.xprofile
+ln $args home/Xresources                  ~/.Xresources
+ln $args home/zshrc                       ~/.zshrc
+
+if [[ $1 == "desktop" ]] || [[ $2 == "desktop" ]]; then
+  ln $args home/Desktopi3Left.conkyrc     ~/.conkyleft.conkyrc
+  ln $args home/Desktopi3Right.conkyrc    ~/.conkyright.conkyrc
+  ln $args home/fehbg_desktop             ~/.fehbg
+else
+  ln $args home/Laptopi3Left-new.conkyrc  ~/.conkyleft.conkyrc
+  ln $args home/Laptopi3Right-new.conkyrc ~/.conkyright.conkyrc
+  ln $args home/fehbg_laptop              ~/.fehbg
 fi
 
 # ==================================================
 # config folder
 # ==================================================
 
-ln -s config/cmus/autosave             ~/.config/cmus/autosave
-ln -s config/cmus/coffee.theme         ~/.config/cmus/coffee.theme
-ln -s config/cmus/gruvbox.theme        ~/.config/cmus/gruvbox.theme
+mkdir ~/.config/cmus
+ln $args config/cmus/autosave             ~/.config/cmus/autosave
+ln $args config/cmus/coffee.theme         ~/.config/cmus/coffee.theme
+ln $args config/cmus/gruvbox.theme        ~/.config/cmus/gruvbox.theme
 
-ln -s config/ranger/rc.conf            ~/.config/ranger/rc.conf
-ln -s config/ranger/colorschemes       ~/.config/ranger/colorschemes
-ln -s config/ranger/rifle.conf         ~/.config/ranger/rifle.conf
-ln -s config/ranger/scope.sh           ~/.config/ranger/scope.sh
+mkdir ~/.config/ranger
+ln $args config/ranger/rc.conf            ~/.config/ranger/rc.conf
+ln $args config/ranger/colorschemes       ~/.config/ranger/colorschemes
+ln $args config/ranger/rifle.conf         ~/.config/ranger/rifle.conf
+ln $args config/ranger/scope.sh           ~/.config/ranger/scope.sh
 
-ln -s config/color                     ~/.config/color
-ln -s config/dunst                     ~/.config/dunst
-ln -s config/i3                        ~/.config/i3
-ln -s config/oomox                     ~/.config/oomox
-ln -s config/qutebrowser               ~/.config/qutebrowser
-ln -s config/rofi                      ~/.config/rofi
-ln -s config/roxterm.sourceforge.net   ~/.config/roxterm.sourceforge.net
-ln -s config/sway                      ~/.config/sway
+ln $args config/gtk-3.0                   ~/.config/gtk-3.0
+ln $args config/color                     ~/.config/color
+ln $args config/alacritty                 ~/.config/alacritty
+ln $args config/kitty                     ~/.config/kitty
+ln $args config/dunst                     ~/.config/dunst
+ln $args config/i3                        ~/.config/i3
+ln $args config/oomox                     ~/.config/oomox
+ln $args config/qutebrowser               ~/.config/qutebrowser
+ln $args config/rofi                      ~/.config/rofi
+ln $args config/roxterm.sourceforge.net   ~/.config/roxterm.sourceforge.net
+ln $args config/sway                      ~/.config/sway
 
 # ==================================================
 # themes folder
 # ==================================================
 
-ln -s themes/gtk3/oomox-gruvbox-gtk    ~/.themes/oomox-gruvbox-gtk
-ln -s themes/icons                     ~/.icons
+ln $args themes/gtk3/oomox-gruvbox-gtk    ~/.themes/oomox-gruvbox-gtk
+ln $args themes/icons                     ~/.icons
 
 # ==================================================
 # scripts folder
 # ==================================================
 
-ln -s scripts                          ~/bin/dot-scripts
-
+ln $args scripts                          ~/bin/dot-scripts

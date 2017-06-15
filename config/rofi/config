@@ -2,7 +2,7 @@ include ~/.config/rofi/themes/gruvbox-dark-soft.theme
 
 rofi.opacity: 100
 rofi.columns: 1
-rofi.font: Source Code Pro for Powerline 10
+rofi.font: Source Code Pro Semibold 10
 rofi.bw: 1
 rofi.eh: 1
 rofi.hmode: false
