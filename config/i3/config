@@ -14,7 +14,7 @@ set $mod Mod4
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
 # font pango:Cantarell, 8
-font pango:Source Code Pro Semibold, 10
+font pango:Source Code Pro Semibold, 7
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -24,7 +24,7 @@ floating_minimum_size 350 x 200
 # floating_maximum_size 1920 x 1080
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -38,13 +38,12 @@ bindsym $mod+space exec rofi -show run
 bindsym $mod+a exec qutebrowser --backend webengine
 
 #terminal-apps
-bindsym $mod+s       exec kitty ranger
-bindsym $mod+p       exec kitty htop
-bindsym $mod+c       exec kitty ~/Sync/dotfiles/scripts/cmus-launcher/cmus-launcher.sh
-bindsym $mod+Shift+m exec kitty alsamixer
-bindsym $mod+m       exec kitty pulsemixer
-bindsym $mod+w       exec kitty wicd-curses
-bindsym $mod+n       exec kitty journalctl -f
+bindsym $mod+s       exec alacritty -e ranger
+bindsym $mod+p       exec alacritty -e htop
+bindsym $mod+c       exec alacritty -e ~/Sync/dotfiles/scripts/cmus-launcher/cmus-launcher.sh
+bindsym $mod+Shift+m exec alacritty -e alsamixer
+bindsym $mod+m       exec alacritty -e pulsemixer
+bindsym $mod+n       exec alacritty -e journalctl -f
 
 # change rotation of current display (output) with xrandr
 bindsym $mod+Ctrl+h exec ~/programming/i3-workspace-rotate/i3-workspace-rotate.sh left
