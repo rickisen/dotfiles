@@ -24,8 +24,7 @@ floating_minimum_size 350 x 200
 # floating_maximum_size 1920 x 1080
 
 # start a terminal
-bindsym $mod+Return exec alacritty
-
+bindsym $mod+Return exec alacritty -e zsh -c "tmux"
 # kill focused window
 bindsym $mod+Shift+c kill
 
@@ -46,10 +45,10 @@ bindsym $mod+m       exec alacritty -e pulsemixer
 bindsym $mod+n       exec alacritty -e journalctl -f
 
 # change rotation of current display (output) with xrandr
-bindsym $mod+Ctrl+h exec ~/programming/i3-workspace-rotate/i3-workspace-rotate.sh left
-bindsym $mod+Ctrl+j exec ~/programming/i3-workspace-rotate/i3-workspace-rotate.sh normal
-bindsym $mod+Ctrl+k exec ~/programming/i3-workspace-rotate/i3-workspace-rotate.sh inverted
-bindsym $mod+Ctrl+l exec ~/programming/i3-workspace-rotate/i3-workspace-rotate.sh right
+bindsym $mod+Ctrl+h exec ~/programming/mine/i3-workspace-rotate/i3-workspace-rotate.sh left
+bindsym $mod+Ctrl+j exec ~/programming/mine/i3-workspace-rotate/i3-workspace-rotate.sh normal
+bindsym $mod+Ctrl+k exec ~/programming/mine/i3-workspace-rotate/i3-workspace-rotate.sh inverted
+bindsym $mod+Ctrl+l exec ~/programming/mine/i3-workspace-rotate/i3-workspace-rotate.sh right
 
 # screenlock
 bindsym $mod+Ctrl+Shift+l exec ~/Sync/dotfiles/i3lock/lock-trans.sh

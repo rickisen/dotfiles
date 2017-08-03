@@ -3699,15 +3699,26 @@ zrclocal
 # mode: sh
 # End:
 
-# launch into tmux per default
+## launch into tmux per default
 [[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+[[ -z "$TMUX" ]] && [[ -n $DISPLAY ]] && exec tmux
 
 # TMUX
 # if which tmux >/dev/null 2>&1; then
 #     #if not inside a tmux session, and if no session is started, start a new session
 #     test -z "$TMUX" && (tmux attach || tmux new-session)
 # fi
+
+## workaround for handling TERM variable in multiple tmux sessions properly from http://sourceforge.net/p/tmux/mailman/message/32751663/ by Nicholas Marriott
+if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
+  case $(tmux showenv TERM 2>/dev/null) in
+    *256color) ;&
+    TERM=fbterm)
+      TERM=screen-256color ;;
+    *)
+      TERM=screen
+  esac
+fi
 
 PATH="/home/rickisen/perl5/bin${PATH+:}${PATH}"; export PATH;
 PERL5LIB="/home/rickisen/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
@@ -3723,9 +3734,9 @@ zle -N zle-line-finish
 export NVM_DIR="/home/rickisen/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export ANDROID_HOME=/opt/android-sdk
-export GOPATH=~/.go
+export GOPATH=/home/rickisen/.go
 
-PATH="$HOME/.node_modules/bin:$GOPATH/bin:$PATH"
+PATH="$GOPATH/bin:$PATH"
 
 alias ga='git add $1'
 alias gb='git branch $1'
@@ -3742,3 +3753,6 @@ alias gpu='git pull'
 alias gra='git remote add'
 alias grr='git remote rm'
 alias gs='git status'
+
+PATH="$HOME/bin:$PATH"
+PATH="$HOME/.node_modules/bin:$PATH"

@@ -22,11 +22,15 @@ compton --config ~/.compton.conf --backend glx --vsync opengl -b &
 killall xiccd
 xiccd & # color correction
 
+#messages
+dunst -config .dunst/dunstrc &
+
 #audio
 pulseaudio --start &
 
-dunst -config .dunst/dunstrc &
+# applets
 nm-applet &
+pasystray &
 
 # set wallpaper
 ./.fehbg

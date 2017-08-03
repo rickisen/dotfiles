@@ -1,2 +1,2 @@
 #!/bin/sh
-feh  --image-bg black --bg-center '/home/rickard/Pictures/wallpaper/gruvbox-arch-wallpaper-darkest-light-bg.png' 
+feh  --bg-fill '/home/rickard/Pictures/wallpaper/wasser.jpg' 

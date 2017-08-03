@@ -18,6 +18,13 @@ ln $args home/xprofile                    ~/.xprofile
 ln $args home/Xresources                  ~/.Xresources
 ln $args home/zshrc                       ~/.zshrc
 
+# mutt
+ln $args home/muttrc                      ~/.muttrc
+touch ~/.cache/mutt
+touch ~/.cache/muttfolder/certificates
+mkdir -p ~/.cache/muttfolder/bodies
+mkdir -p ~/.cache/muttfolder/headers
+
 if [[ $1 == "desktop" ]] || [[ $2 == "desktop" ]]; then
   ln $args home/Desktopi3Left.conkyrc     ~/.conkyleft.conkyrc
   ln $args home/Desktopi3Right.conkyrc    ~/.conkyright.conkyrc
@@ -38,6 +45,7 @@ ln $args config/cmus/coffee.theme         ~/.config/cmus/coffee.theme
 ln $args config/cmus/gruvbox.theme        ~/.config/cmus/gruvbox.theme
 
 mkdir ~/.config/ranger
+ln $args config/ranger/devicons.py        ~/.config/ranger/devicons.py
 ln $args config/ranger/rc.conf            ~/.config/ranger/rc.conf
 ln $args config/ranger/colorschemes       ~/.config/ranger/colorschemes
 ln $args config/ranger/rifle.conf         ~/.config/ranger/rifle.conf
