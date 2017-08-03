@@ -3755,4 +3755,5 @@ alias grr='git remote rm'
 alias gs='git status'
 
 PATH="$HOME/bin:$PATH"
+PATH="$HOME/bin/dot-scripts:$PATH"
 PATH="$HOME/.node_modules/bin:$PATH"

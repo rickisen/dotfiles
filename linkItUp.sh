@@ -20,10 +20,11 @@ ln $args home/zshrc                       ~/.zshrc
 
 # mutt
 ln $args home/muttrc                      ~/.muttrc
-touch ~/.cache/mutt
-touch ~/.cache/muttfolder/certificates
+ln $args home/mailcap                     ~/.mailcap
 mkdir -p ~/.cache/muttfolder/bodies
 mkdir -p ~/.cache/muttfolder/headers
+touch ~/.cache/mutt
+touch ~/.cache/muttfolder/certificates
 
 if [[ $1 == "desktop" ]] || [[ $2 == "desktop" ]]; then
   ln $args home/Desktopi3Left.conkyrc     ~/.conkyleft.conkyrc

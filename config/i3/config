@@ -50,6 +50,9 @@ bindsym $mod+Ctrl+j exec ~/programming/mine/i3-workspace-rotate/i3-workspace-rot
 bindsym $mod+Ctrl+k exec ~/programming/mine/i3-workspace-rotate/i3-workspace-rotate.sh inverted
 bindsym $mod+Ctrl+l exec ~/programming/mine/i3-workspace-rotate/i3-workspace-rotate.sh right
 
+#make active window's colors inverted
+bindsym $mod+Shift+i exec invert-active-window.sh
+
 # screenlock
 bindsym $mod+Ctrl+Shift+l exec ~/Sync/dotfiles/i3lock/lock-trans.sh
 
