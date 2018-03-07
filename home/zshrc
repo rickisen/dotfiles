@@ -3709,7 +3709,7 @@ zrclocal
 #     test -z "$TMUX" && (tmux attach || tmux new-session)
 # fi
 
-## workaround for handling TERM variable in multiple tmux sessions properly from http://sourceforge.net/p/tmux/mailman/message/32751663/ by Nicholas Marriott
+# workaround for handling TERM variable in multiple tmux sessions properly from http://sourceforge.net/p/tmux/mailman/message/32751663/ by Nicholas Marriott
 if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
   case $(tmux showenv TERM 2>/dev/null) in
     *256color) ;&
@@ -3726,10 +3726,10 @@ PERL_LOCAL_LIB_ROOT="/home/rickisen/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LI
 PERL_MB_OPT="--install_base \"/home/rickisen/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/rickisen/perl5"; export PERL_MM_OPT;
 
-function zle-line-init () { echoti smkx }
-function zle-line-finish () { echoti rmkx }
-zle -N zle-line-init
-zle -N zle-line-finish
+#function zle-line-init () { echoti smkx }
+#function zle-line-finish () { echoti rmkx }
+#zle -N zle-line-init
+#zle -N zle-line-finish
 
 export NVM_DIR="/home/rickisen/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -3753,6 +3753,14 @@ alias gpu='git pull'
 alias gra='git remote add'
 alias grr='git remote rm'
 alias gs='git status'
+
+#Pacman aliases
+alias Ss='pacman -Ss $1'
+alias S='sudo pacman -S $1'
+alias aSs='pacaur -Ss $1'
+alias ass='pacaur -Ss $1'
+alias aS='pacaur -S $1'
+alias as='pacaur -S $1'
 
 PATH="$HOME/bin:$PATH"
 PATH="$HOME/bin/dot-scripts:$PATH"
