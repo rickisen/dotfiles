@@ -18,7 +18,8 @@ keynav &
 unclutter &
 
 # Visual bling
-compton --config ~/.compton.conf --backend glx --vsync opengl -b &
+compton --config ~/.compton.conf --backend glx --vsync opengl-swc --xrender-sync --xrender-sync-fence &
+
 killall xiccd
 xiccd & # color correction
 

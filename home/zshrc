@@ -3699,15 +3699,11 @@ zrclocal
 # mode: sh
 # End:
 
+# TMUX ==================================================
+
 ## launch into tmux per default
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && [[ -n $DISPLAY ]] && exec tmux
-
-# TMUX
-# if which tmux >/dev/null 2>&1; then
-#     #if not inside a tmux session, and if no session is started, start a new session
-#     test -z "$TMUX" && (tmux attach || tmux new-session)
-# fi
 
 ## workaround for handling TERM variable in multiple tmux sessions properly from http://sourceforge.net/p/tmux/mailman/message/32751663/ by Nicholas Marriott
 if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
@@ -3720,26 +3716,38 @@ if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
   esac
 fi
 
-PATH="/home/rickisen/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/rickisen/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/rickisen/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/rickisen/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/rickisen/perl5"; export PERL_MM_OPT;
+# PATH mods ==================================================
+
+PATH="$HOME/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 function zle-line-init () { echoti smkx }
 function zle-line-finish () { echoti rmkx }
 zle -N zle-line-init
 zle -N zle-line-finish
 
-export NVM_DIR="/home/rickisen/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export ANDROID_HOME=/opt/android-sdk
-export GOPATH=/home/rickisen/.go
+export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
+export USE_SDK_WRAPPER="TRUE"
+export GOPATH=$HOME/.go
 
 PATH="$GOPATH/bin:$PATH"
 
+PATH="$HOME/bin:$PATH"
+PATH="$HOME/bin/dot-scripts:$PATH"
+
+export npm_config_prefix=~/.node_modules
+PATH="$HOME/.node_modules/bin:$PATH"
+
+# ALIASES ==================================================
+
 alias ga='git add $1'
-alias gb='git branch $1'
+alias gbr='git branch $1'
 alias gcl='git clone $1'
 alias gco='git checkout $1'
 alias gd='git diff $1'
@@ -3754,6 +3762,8 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gs='git status'
 
-PATH="$HOME/bin:$PATH"
-PATH="$HOME/bin/dot-scripts:$PATH"
-PATH="$HOME/.node_modules/bin:$PATH"
+alias sys='systemctl start $1'
+alias syst='systemctl stop $1'
+alias systa='systemctl status $1'
+
+source /usr/share/nvm/init-nvm.sh

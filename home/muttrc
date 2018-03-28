@@ -325,54 +325,6 @@ auto_view text/html
 # machines.
 #
 #------------------------------------------------------------
-# Gmail
-#------------------------------------------------------------
-#
-# --------- imap -------------
-#
-set folder           = "imaps://imap.gmail.com/"
-set imap_user        = "rickard.petersen@gmail.com"
-# set imap_pass       = your-imap-password
-# set spoolfile       = "+INBOX"
-# set spoolfile        = "+[Gmail]/All Mail"
-set spoolfile        = "=most"
-mailboxes            = +INBOX
-set certificate_file = ~/.cache/muttfolder/certificates
-set imap_check_subscribed
-
-# Store message headers locally to speed things up.
-# If hcache is a folder, Mutt will create sub cache folders for each account which may speeds things up even more.
-set header_cache = ~/.cache/muttfolder/headers/
-
-# Store messages locally to speed things up, like searching message bodies.
-# Can be the same folder as header_cache.
-# This will cost important disk usage according to your e-mail amount.
-set message_cachedir = ~/.cache/muttfolder/bodies/
-
-# Specify where to save and/or look for postponed messages.
-set postponed = "+[Gmail]/Drafts"
-set trash = "+[Google Mail]/Trash"
-
-# Allow Mutt to open new imap connection automatically.
-unset imap_passive
-
-# Keep IMAP connection alive by polling intermittently (time in seconds).
-set imap_keepalive = 300
-
-# How often to check for new mail (time in seconds).
-set mail_check = 60
-
-# --------- SMTP -----------------
-#
-# set my_pass='mysecretpass'
-# set my_user=myname
-set realname      = 'Rickard'
-set from          = rickard.petersen@gmail.com
-set use_from      = yes
-set smtp_url      = "smtp://rickard.petersen@gmail.com@smtp.gmail.com:587/"
-set ssl_force_tls = yes
-
-#------------------------------------------------------------
 # Vi Key Bindings
 #------------------------------------------------------------
 
@@ -400,6 +352,7 @@ bind pager,index                dd  delete-message
 
 # Mail & Reply
 bind index                      \Cm list-reply # Doesn't work currently
+bind pager,index                gr  group-reply
 
 # Threads
 bind browser,pager,index        N   search-opposite
@@ -514,3 +467,71 @@ bind index,pager \Co sidebar-open
 # bind index,pager <F6> sidebar-next-new
 # Toggle the visibility of the Sidebar.
 bind index,pager \Cp sidebar-toggle-visible
+
+# --------------------------------------------------------------------------
+# NOTIFICATIONS
+# --------------------------------------------------------------------------
+# Mac osx
+# set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail' -message '%n new messages, %u unread.' -activate 'com.apple.Terminal'"
+#
+# libnotify
+set new_mail_command="notify-send 'New Email - Mutt' '%n new messages, %u unread.' &"
+
+# --------------------------------------------------------------------------
+# Maildir
+# --------------------------------------------------------------------------
+# set mbox_type=Maildir
+# set folder=~/Mail/maildir
+# set spoolfile=+
+# set header_cache=~/.cache/mutt
+
+# --------------------------------------------------------------------------
+# SMTP
+# --------------------------------------------------------------------------
+# Use the same smtp for all outgoing mail
+#
+# set my_pass='mysecretpass'
+# set my_user=myname
+set realname      = 'Rickard'
+set from          = rickard.petersen@gmail.com
+set use_from      = yes
+set smtp_url      = "smtp://rickard.petersen@gmail.com@smtp.gmail.com:587/"
+set ssl_force_tls = yes
+
+#------------------------------------------------------------
+# Gmail
+#------------------------------------------------------------
+
+# Global gmail-imap settings ---------------
+#
+# Specify where to save and/or look for postponed messages.
+set postponed = "+[Gmail]/Drafts"
+set trash = "+[Google Mail]/Trash"
+unset imap_passive
+set imap_keepalive = 300
+set mail_check = 60
+# set spoolfile       = "+INBOX"
+# set spoolfile        = "+[Gmail]/All Mail"
+set message_cachedir = ~/.cache/muttfolder/bodies/
+set header_cache = ~/.cache/muttfolder/headers/
+set certificate_file = ~/.cache/muttfolder/certificates
+
+# mailboxes imaps://rickard.petersen@imap.gmail.com/ imaps://rickard.spam@imap.gmail.com/
+
+# dont use imap_check_subscribed with mailboxes
+set imap_check_subscribed
+set imap_user        = "rickard.petersen@gmail.com"
+set folder           = "imaps://imap.gmail.com/"
+# # set imap_pass       = your-imap-password
+set spoolfile        = "=most"
+
+# ## ACCOUNT1
+# source "~/.mutt/work"
+# # Here we use the $folder variable that has just been set in the sourced file.
+# # We must set it right now otherwise the 'folder' variable will change in the next sourced file.
+# folder-hook $folder 'source ~/.mutt/work'
+#
+# ## ACCOUNT2
+# source "~/.mutt/personal"
+# folder-hook rickard.petersen@gmail.com/ 'source ~/.mutt/personal'
+# # folder-hook rickard.petersen@gmail.com/Family 'set realname="Bob"'

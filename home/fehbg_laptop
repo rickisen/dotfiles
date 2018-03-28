@@ -1,2 +1,2 @@
 #!/bin/sh
-feh  --bg-fill '/home/rickisen/Pictures/wallpaper/under-antarctica-emperor-penguins.adapt.1900.1.jpg' 
+'feh' '--bg-fill' 'Pictures/wallpaper/4HCaNCl.jpg' 
