@@ -3705,7 +3705,13 @@ zrclocal
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && [[ -n $DISPLAY ]] && exec tmux
 
-## workaround for handling TERM variable in multiple tmux sessions properly from http://sourceforge.net/p/tmux/mailman/message/32751663/ by Nicholas Marriott
+# TMUX
+# if which tmux >/dev/null 2>&1; then
+#     #if not inside a tmux session, and if no session is started, start a new session
+#     test -z "$TMUX" && (tmux attach || tmux new-session)
+# fi
+
+# workaround for handling TERM variable in multiple tmux sessions properly from http://sourceforge.net/p/tmux/mailman/message/32751663/ by Nicholas Marriott
 if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
   case $(tmux showenv TERM 2>/dev/null) in
     *256color) ;&
@@ -3724,10 +3730,10 @@ PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}";
 PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
-function zle-line-init () { echoti smkx }
-function zle-line-finish () { echoti rmkx }
-zle -N zle-line-init
-zle -N zle-line-finish
+#function zle-line-init () { echoti smkx }
+#function zle-line-finish () { echoti rmkx }
+#zle -N zle-line-init
+#zle -N zle-line-finish
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -3762,8 +3768,19 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gs='git status'
 
-alias sys='systemctl start $1'
-alias syst='systemctl stop $1'
-alias systa='systemctl status $1'
+
+#Pacman aliases
+alias Ss='pacman -Ss $1'
+alias S='sudo pacman -S $1'
+alias aSs='pacaur -Ss $1'
+alias ass='pacaur -Ss $1'
+alias aS='pacaur -S $1'
+alias as='pacaur -S $1'
 
 source /usr/share/nvm/init-nvm.sh
+
+PATH="$HOME/bin:$PATH"
+PATH="$HOME/bin/dot-scripts:$PATH"
+PATH="$HOME/.node_modules/bin:$PATH"
+
+
