@@ -8,7 +8,7 @@ export BROWSER=firefox &
 export EDITOR=vim &
 export TERMINAL=roxterm &
 export DE=i3 &
-export QT_STYLE_OVERRIDE=gtk2
+export QT_STYLE_OVERRIDE=gtk2 &
 
 # keyboard and mouse modifications, (swedish keyboard)
 # setxkbmap se &
@@ -19,11 +19,12 @@ unclutter &
 
 # Visual bling
 # compton --config ~/.compton.conf --backend glx --vsync opengl-swc --xrender-sync --xrender-sync-fence &
-
 # compton --config ~/.compton.conf --backend glx --vsync opengl -b &
-compton --config ~/.compton.conf --vsync opengl -b &
-killall xiccd &
-xiccd & # color correction
+# compton --config ~/.compton.conf --vsync opengl -b &
+
+# killall xiccd &
+# xiccd & # color correction
+xcalib -gc 0.8 -a -s 0 &
 
 #messages
 dunst -config .dunst/dunstrc &
@@ -36,7 +37,7 @@ nm-applet &
 pasystray &
 
 # set wallpaper
-./.fehbg
+./.fehbg &
 # conky --conf .conkyleft.conkyrc &
 # conky --conf .conkyright.conkyrc &
 
