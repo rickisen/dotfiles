@@ -1,2 +1,2 @@
 #!/bin/sh
-'feh' '--bg-fill' 'Pictures/wallpaper/4HCaNCl.jpg' 
+'feh' '--bg-fill' '/home/rickisen/Pictures/wallpaper/4HCaNCl.jpg' 
