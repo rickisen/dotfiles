@@ -3777,10 +3777,17 @@ alias ass='pacaur -Ss $1'
 alias aS='pacaur -S $1'
 alias as='pacaur -S $1'
 
+
+alias p='ping google.com'
+
 source /usr/share/nvm/init-nvm.sh
 
 PATH="$HOME/bin:$PATH"
 PATH="$HOME/bin/dot-scripts:$PATH"
 PATH="$HOME/.node_modules/bin:$PATH"
+PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
 
 
+
+# added by travis gem
+[ -f /home/rickisen/.travis/travis.sh ] && source /home/rickisen/.travis/travis.sh
