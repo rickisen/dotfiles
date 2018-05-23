@@ -33,8 +33,8 @@ bindsym $mod+Shift+c kill
 bindsym $mod+space exec rofi -show run
 
 # apps
-# bindsym $mod+a exec firefox
-bindsym $mod+a exec qutebrowser --backend webengine
+bindsym $mod+a exec firefox
+# bindsym $mod+a exec qutebrowser
 
 #terminal-apps
 bindsym $mod+s       exec alacritty -e ranger
@@ -45,10 +45,13 @@ bindsym $mod+m       exec alacritty -e pulsemixer
 bindsym $mod+n       exec alacritty -e journalctl -f
 
 # change rotation of current display (output) with xrandr
-bindsym $mod+Ctrl+h exec ~/programming/mine/i3-workspace-rotate/i3-workspace-rotate.sh left
-bindsym $mod+Ctrl+j exec ~/programming/mine/i3-workspace-rotate/i3-workspace-rotate.sh normal
-bindsym $mod+Ctrl+k exec ~/programming/mine/i3-workspace-rotate/i3-workspace-rotate.sh inverted
-bindsym $mod+Ctrl+l exec ~/programming/mine/i3-workspace-rotate/i3-workspace-rotate.sh right
+bindsym $mod+Ctrl+h  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh left
+bindsym $mod+Ctrl+j  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh normal
+bindsym $mod+Ctrl+k  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh inverted
+bindsym $mod+Ctrl+l  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh right
+
+# change wallpaper
+bindsym $mod+w       exec ~/bin/random-wallpaper.sh
 
 #make active window's colors inverted
 bindsym $mod+Shift+i exec invert-active-window.sh
