@@ -3731,11 +3731,15 @@ PERL_MM_OPT="INSTALL_BASE=/home/rickisen/perl5"; export PERL_MM_OPT;
 #zle -N zle-line-init
 #zle -N zle-line-finish
 
+
+export npm_config_prefix=~/.node_modules
 export NVM_DIR="/home/rickisen/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export ANDROID_HOME=/opt/android-sdk
-export GOPATH=/home/rickisen/.go
+PATH="$HOME/.node_modules/bin:$PATH"
 
+export ANDROID_HOME=/opt/android-sdk
+
+export GOPATH=/home/rickisen/.go
 PATH="$GOPATH/bin:$PATH"
 
 alias ga='git add $1'
@@ -3755,13 +3759,27 @@ alias grr='git remote rm'
 alias gs='git status'
 
 #Pacman aliases
+alias Qs='pacman -Qs $1'
 alias Ss='pacman -Ss $1'
 alias S='sudo pacman -S $1'
+alias Sy='sudo pacman -Sy $1'
+alias Syu='sudo pacman -Syu $1'
 alias aSs='pacaur -Ss $1'
 alias ass='pacaur -Ss $1'
 alias aS='pacaur -S $1'
 alias as='pacaur -S $1'
 
+#Systemd
+alias sstart='sudo systemctl start $1'
+alias srestart='sudo systemctl restart $1'
+alias senable='sudo systemctl enable $1'
+alias sstop='sudo systemctl stop $1'
+alias sdisable='sudo systemctl enable $1'
+alias sstatus='systemctl status $1'
+
+alias e='vim $1'
+alias ed='vimdiff $1'
+
 PATH="$HOME/bin:$PATH"
 PATH="$HOME/bin/dot-scripts:$PATH"
-PATH="$HOME/.node_modules/bin:$PATH"
+
