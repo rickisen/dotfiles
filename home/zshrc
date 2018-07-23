@@ -3735,8 +3735,6 @@ PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 #zle -N zle-line-init
 #zle -N zle-line-finish
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export ANDROID_HOME=/opt/android-sdk
 export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
 export USE_SDK_WRAPPER="TRUE"
@@ -3746,9 +3744,6 @@ PATH="$GOPATH/bin:$PATH"
 
 PATH="$HOME/bin:$PATH"
 PATH="$HOME/bin/dot-scripts:$PATH"
-
-export npm_config_prefix=~/.node_modules
-PATH="$HOME/.node_modules/bin:$PATH"
 
 # ALIASES ==================================================
 
@@ -3780,11 +3775,15 @@ alias as='pacaur -S $1'
 
 alias p='ping google.com'
 
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# export npm_config_prefix=~/.nvm/versions/node/v8.0.0
+# PATH="$HOME/.node_modules/bin:$PATH" # comment out this on fresh installs
 source /usr/share/nvm/init-nvm.sh
+
 
 PATH="$HOME/bin:$PATH"
 PATH="$HOME/bin/dot-scripts:$PATH"
-PATH="$HOME/.node_modules/bin:$PATH"
 PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
 
 
