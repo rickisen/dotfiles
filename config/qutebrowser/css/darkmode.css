@@ -1,0 +1,32 @@
+*:not(body):not(.arrow):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(a):not(p):not(span):not(strong) {
+  background-color: rgba(255,255,255,0.005) !important;
+  color: #ebdbb2 !important;
+  outline-color: #d3869b;
+  border-color: #8ec07c;
+}
+
+h1, h2, h3, h4, h5, h6,
+b, strong {
+  color: #bdae93 !important;
+}
+
+a {
+  color: #83a598 !important;
+}
+
+input, textarea {
+  outline-color: #fe8019 !important;
+  border-color: #fe8019 !important;
+}
+
+body {
+  background: #282828!important;
+}
+
+header, nav, input * {
+  background-color: #282828!important;
+}
+
+/* svg, img { */
+/*   outline: 1px solid #fe8019 ; */
+/* } */

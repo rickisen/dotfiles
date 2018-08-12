@@ -34,7 +34,8 @@ bindsym $mod+space exec rofi -show run
 
 # apps
 # bindsym $mod+a exec firefox
-bindsym $mod+a exec qutebrowser --backend webengine
+# bindsym $mod+a exec qutebrowser --backend webengine
+bindsym $mod+a exec qutebrowser
 
 #terminal-apps
 bindsym $mod+s       exec alacritty -e ranger

@@ -76,3 +76,9 @@ ln $args themes/icons                     ~/.icons
 # ==================================================
 
 ln $args scripts                          ~/bin/dot-scripts
+
+# ==================================================
+# local share
+# ==================================================
+mkdir -p ~/.local/share/qutebrowser
+ln $args local/share/qutebrowser/userscripts/               ~/.local/share/qutebrowser/userscripts/
