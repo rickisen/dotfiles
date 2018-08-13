@@ -216,4 +216,6 @@ bindsym $mod+Shift+y border pixel 2
 
 for_window [class=".*"] title_format <span size="xx-small">  </span><span size="large"> <b>%title</b></span>  -  %class
 
+for_window [class="Godot" instance="Godot_Engine"] floating enable
+
 # smart_borders on

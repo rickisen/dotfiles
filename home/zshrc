@@ -3699,6 +3699,8 @@ zrclocal
 # mode: sh
 # End:
 
+# TMUX ==================================================
+
 ## launch into tmux per default
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && [[ -n $DISPLAY ]] && exec tmux
@@ -3720,30 +3722,37 @@ if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
   esac
 fi
 
-PATH="/home/rickisen/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/rickisen/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/rickisen/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/rickisen/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/rickisen/perl5"; export PERL_MM_OPT;
+# PATH mods ==================================================
+
+PATH="$HOME/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 #function zle-line-init () { echoti smkx }
 #function zle-line-finish () { echoti rmkx }
 #zle -N zle-line-init
 #zle -N zle-line-finish
 
-
-export npm_config_prefix=~/.node_modules
-export NVM_DIR="/home/rickisen/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-PATH="$HOME/.node_modules/bin:$PATH"
-
 export ANDROID_HOME=/opt/android-sdk
+export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
+export USE_SDK_WRAPPER="TRUE"
+export GOPATH=$HOME/.go
 
-export GOPATH=/home/rickisen/.go
 PATH="$GOPATH/bin:$PATH"
 
+PATH="$HOME/bin:$PATH"
+PATH="$HOME/bin/dot-scripts:$PATH"
+
+PATH="$HOME/.node_modules/bin:$PATH"
+
+# ALIASES ==================================================
+
 alias ga='git add $1'
-alias gb='git branch $1'
+alias gbr='git branch $1'
 alias gcl='git clone $1'
 alias gco='git checkout $1'
 alias gd='git diff $1'
@@ -3758,28 +3767,26 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gs='git status'
 
+
 #Pacman aliases
-alias Qs='pacman -Qs $1'
 alias Ss='pacman -Ss $1'
 alias S='sudo pacman -S $1'
-alias Sy='sudo pacman -Sy $1'
-alias Syu='sudo pacman -Syu $1'
 alias aSs='pacaur -Ss $1'
 alias ass='pacaur -Ss $1'
 alias aS='pacaur -S $1'
 alias as='pacaur -S $1'
 
-#Systemd
-alias sstart='sudo systemctl start $1'
-alias srestart='sudo systemctl restart $1'
-alias senable='sudo systemctl enable $1'
-alias sstop='sudo systemctl stop $1'
-alias sdisable='sudo systemctl enable $1'
-alias sstatus='systemctl status $1'
 
-alias e='vim $1'
-alias ed='vimdiff $1'
+alias p='ping google.com'
+
+source /usr/share/nvm/init-nvm.sh
 
 PATH="$HOME/bin:$PATH"
 PATH="$HOME/bin/dot-scripts:$PATH"
+PATH="$HOME/.node_modules/bin:$PATH"
+PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
 
+
+
+# added by travis gem
+[ -f /home/rickisen/.travis/travis.sh ] && source /home/rickisen/.travis/travis.sh
