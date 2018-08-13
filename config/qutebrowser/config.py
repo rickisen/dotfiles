@@ -506,6 +506,14 @@ c.completion.cmd_history_max_items = -1
 ##   - ask
 # c.content.desktop_capture = 'ask'
 
+## Enable extra tools for Web developers. This needs to be enabled for
+## `:inspector` to work and also adds an _Inspect_ entry to the context
+## menu. For QtWebEngine, see `--enable-webengine-inspector` in
+## `qutebrowser --help` instead.
+## Type: Bool
+# c.content.developer_extras = False
+
+
 ## Try to pre-fetch DNS entries to speed up browsing.
 ## Type: Bool
 # c.content.dns_prefetch = True
@@ -561,6 +569,7 @@ c.content.geolocation = False
 ## host per line - A zip-file of any of the above, with either only one
 ## file, or a file   named `hosts` (with any extension).
 ## Type: List of Url
+# c.content.host_blocking.lists = ['https://www.malwaredomainlist.com/hostslist/hosts.txt', 'http://someonewhocares.org/hosts/hosts', 'http://winhelp2002.mvps.org/hosts.zip', 'http://malwaredomains.lehigh.edu/files/justdomains.zip', 'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext']
 # c.content.host_blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
 
 ## List of domains that should always be loaded, despite being ad-
@@ -610,7 +619,7 @@ c.content.geolocation = False
 ## Use the standard JavaScript modal dialog for `alert()` and
 ## `confirm()`.
 ## Type: Bool
-# c.content.javascript.modal_dialog = False
+c.content.javascript.modal_dialog = True
 
 ## Show javascript prompts.
 ## Type: Bool
@@ -726,7 +735,7 @@ c.content.pdfjs = True
 
 ## Monitor load requests for cross-site scripting attempts. Suspicious
 ## scripts will be blocked and reported in the inspector's JavaScript
-## console.
+## console. Enabling this feature might have an impact on performance.
 ## Type: Bool
 # c.content.xss_auditing = True
 
@@ -778,6 +787,7 @@ c.downloads.remove_finished = 5000
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
 # c.editor.command = ['gvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
+#c.editor.command = ['alacritty', '-e', 'vim', '+call cursor({line0}, {column0})', '{file}']
 c.editor.command = ['alacritty', 'vim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
 
 ## Encoding to use for the editor.
@@ -1094,6 +1104,7 @@ c.input.insert_mode.plugins = True
 ## work with the `:scroll-px` command.
 ## Type: Bool
 # c.scrolling.smooth = False
+c.scrolling.smooth = True
 
 ## When to find text on a page case-insensitively.
 ## Type: String
@@ -1286,6 +1297,10 @@ c.tabs.background = True
 ## Padding (in pixels) around text for tabs.
 ## Type: Padding
 # c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
+
+## Stay in insert/passthrough mode when switching tabs.
+## Type: Bool
+# c.tabs.persist_mode_on_change = False
 
 ## Shrink pinned tabs down to their contents.
 ## Type: Bool

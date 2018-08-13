@@ -1,0 +1,53 @@
+#!/bin/bash
+
+#read in resources
+[[ -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
+
+# enviorment variables
+export BROWSER=firefox &
+export EDITOR=vim &
+export TERMINAL=alacritty &
+export DE=i3 &
+export QT_STYLE_OVERRIDE=gtk2
+
+# keyboard and mouse modifications, (swedish keyboard)
+setxkbmap gb &
+numlockx &
+keynav &
+unclutter &
+
+# Visual bling
+compton --config ~/.compton.conf --backend glx --vsync opengl -b &
+# compton --config ~/.compton.conf --vsync opengl -b &
+killall xiccd
+xiccd & # color correction
+
+#messages
+dunst -config .dunst/dunstrc &
+
+#audio
+pulseaudio --start &
+
+# applets
+nm-applet &
+pasystray &
+
+# set wallpaper
+# ./.fehbg
+# conky --conf .conkyleft.conkyrc &
+# conky --conf .conkyright.conkyrc &
+
+# locker script
+xautolock -time 15 -locker ~/Sync/dotfiles/i3lock/lock-trans.sh &
+
+# gnome keyring
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+#export SSH_AUTH_SOCK
+#dbus-update-activation-environment --systemd DISPLAY &
+
+# set random wallpaper
+~/bin/randomWallpaper.sh &
+
+# start wm
+exec i3
+
