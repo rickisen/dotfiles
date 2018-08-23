@@ -47,15 +47,16 @@ bindsym $mod+Shift+m exec alacritty -e pulsemixer
 bindsym $mod+n       exec alacritty -e journalctl -f
 
 # change rotation of current display (output) with xrandr
-bindsym $mod+Ctrl+h exec ~/bin/dot-scripts/i3-workspace-rotate/i3-workspace-rotate.sh left
-bindsym $mod+Ctrl+j exec ~/bin/dot-scripts/i3-workspace-rotate/i3-workspace-rotate.sh normal
-bindsym $mod+Ctrl+k exec ~/bin/dot-scripts/i3-workspace-rotate/i3-workspace-rotate.sh inverted
-bindsym $mod+Ctrl+l exec ~/bin/dot-scripts/i3-workspace-rotate/i3-workspace-rotate.sh right
+#bindsym $mod+z        exec ~/bin/dot-scripts/desktop-screen/only-hdmivga.sh
+#bindsym $mod+Shift+z  exec ~/bin/dot-scripts/desktop-screen/no-hdmivga.sh
+#bindsym $mod+Ctrl+z   exec ~/bin/dot-scripts/desktop-screen/with-hdmivga.sh
+bindsym $mod+Ctrl+h  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh left
+bindsym $mod+Ctrl+j  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh normal
+bindsym $mod+Ctrl+k  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh inverted
+bindsym $mod+Ctrl+l  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh right
 
-# change mode of beamer
-bindsym $mod+z        exec ~/bin/dot-scripts/desktop-screen/only-hdmivga.sh
-bindsym $mod+Shift+z  exec ~/bin/dot-scripts/desktop-screen/no-hdmivga.sh
-bindsym $mod+Ctrl+z   exec ~/bin/dot-scripts/desktop-screen/with-hdmivga.sh
+# change wallpaper
+bindsym $mod+w       exec ~/bin/random-wallpaper.sh
 
 #make active window's colors inverted
 bindsym $mod+Shift+i exec ~/bin/dot-scripts/invert-active-window.sh
@@ -220,6 +221,8 @@ bindsym $mod+y border normal 2
 bindsym $mod+Shift+y border pixel 2
 
 for_window [class=".*"] title_format <span size="xx-small">  </span><span size="large"> <b>%title</b></span>  -  %class
+
+for_window [class="Godot" instance="Godot_Engine"] floating enable
 
 # smart_borders on
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings

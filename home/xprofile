@@ -6,12 +6,11 @@
 # enviorment variables
 export BROWSER=firefox &
 export EDITOR=vim &
-export TERMINAL=roxterm &
+export TERMINAL=alacritty &
 export DE=i3 &
 export QT_STYLE_OVERRIDE=gtk2 &
 
 # keyboard and mouse modifications, (swedish keyboard)
-# setxkbmap se &
 setxkbmap gb &
 numlockx &
 keynav &
@@ -21,10 +20,12 @@ unclutter &
 # compton --config ~/.compton.conf --backend glx --vsync opengl-swc --xrender-sync --xrender-sync-fence &
 # compton --config ~/.compton.conf --backend glx --vsync opengl -b &
 # compton --config ~/.compton.conf --vsync opengl -b &
-
-# killall xiccd &
-# xiccd & # color correction
-xcalib -gc 0.8 -a -s 0 &
+compton --config ~/.compton.conf --backend glx --vsync opengl -b &
+# compton --config ~/.compton.conf --vsync opengl -b &
+killall xiccd
+xiccd & # color correction
+nvidia-settings -l &
+# xcalib -gc 0.8 -a -s 0 &
 
 #messages
 dunst -config .dunst/dunstrc &
@@ -37,12 +38,18 @@ nm-applet &
 pasystray &
 
 # set wallpaper
-./.fehbg &
+# ./.fehbg
 # conky --conf .conkyleft.conkyrc &
 # conky --conf .conkyright.conkyrc &
+~/bin/randomWallpaper.sh &
 
 # locker script
 xautolock -time 15 -locker ~/Sync/dotfiles/i3lock/lock-trans.sh &
+
+# gnome keyring
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+#export SSH_AUTH_SOCK
+#dbus-update-activation-environment --systemd DISPLAY &
 
 #autostart
 #hexchat --minimize=2 &

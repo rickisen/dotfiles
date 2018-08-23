@@ -3722,7 +3722,7 @@ if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
   esac
 fi
 
-# PATH mods ==================================================
+# PERL Path mods ==================================================
 
 PATH="$HOME/perl5/bin${PATH+:}${PATH}"; export PATH;
 PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
@@ -3730,23 +3730,20 @@ PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}";
 PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
-#function zle-line-init () { echoti smkx }
-#function zle-line-finish () { echoti rmkx }
-#zle -N zle-line-init
-#zle -N zle-line-finish
+# ANDROID ==================================================
 
 export ANDROID_HOME=/opt/android-sdk
 export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
 export USE_SDK_WRAPPER="TRUE"
+
+# GOLANG ==================================================
+
 export GOPATH=$HOME/.go
-
 PATH="$GOPATH/bin:$PATH"
-
-PATH="$HOME/bin:$PATH"
-PATH="$HOME/bin/dot-scripts:$PATH"
 
 # ALIASES ==================================================
 
+#git aliases
 alias ga='git add $1'
 alias gbr='git branch $1'
 alias gcl='git clone $1'
@@ -3754,7 +3751,6 @@ alias gco='git checkout $1'
 alias gd='git diff $1'
 alias gdc='git diff --cached'
 alias gl='git log --pretty=format:"%Cgreen%h %Creset %s %Cblueby %an (%ar) %Cred %d" --graph'
-# alias gm='git commit -m $1'
 alias gm='git commit'
 alias gma='git commit -am $1'
 alias gp='git push'
@@ -3763,7 +3759,6 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gs='git status'
 
-
 #Pacman aliases
 alias Ss='pacman -Ss $1'
 alias S='sudo pacman -S $1'
@@ -3771,9 +3766,9 @@ alias aSs='pacaur -Ss $1'
 alias ass='pacaur -Ss $1'
 alias aS='pacaur -S $1'
 alias as='pacaur -S $1'
-
-
 alias p='ping google.com'
+
+# NVM ==================================================
 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -3781,12 +3776,9 @@ alias p='ping google.com'
 # PATH="$HOME/.node_modules/bin:$PATH" # comment out this on fresh installs
 source /usr/share/nvm/init-nvm.sh
 
-
+# USER SCRIPTS ==================================================
 PATH="$HOME/bin:$PATH"
-PATH="$HOME/bin/dot-scripts:$PATH"
 PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
 
-
-
-# added by travis gem
+# TRAVIS ==================================================
 [ -f /home/rickisen/.travis/travis.sh ] && source /home/rickisen/.travis/travis.sh
