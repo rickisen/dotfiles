@@ -1733,7 +1733,7 @@ config.bind('<Ctrl-I>', 'open-editor', mode='insert')
 # config.bind('y', 'prompt-accept yes', mode='yesno')
 
 config.bind('gr', 'set content.user_stylesheets ~/.config/qutebrowser/css/darkmode.css')
-config.bind('gc', 'set content.user_stylesheets ~/.config/qutebrowser/css/gruvbox-all-sites.css')
+config.bind('gc', 'set content.user_stylesheets ~/.config/qutebrowser/css/mastodon.css')
 config.bind('gd', 'set content.user_stylesheets []')
 
 # Use color scheme

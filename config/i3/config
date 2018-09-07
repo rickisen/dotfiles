@@ -56,7 +56,7 @@ bindsym $mod+Ctrl+k  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh inver
 bindsym $mod+Ctrl+l  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh right
 
 # change wallpaper
-bindsym $mod+w       exec ~/bin/random-wallpaper.sh
+bindsym $mod+w       exec ~/bin/dot-scripts/random-wallpaper.sh
 
 #make active window's colors inverted
 bindsym $mod+Shift+i exec ~/bin/dot-scripts/invert-active-window.sh

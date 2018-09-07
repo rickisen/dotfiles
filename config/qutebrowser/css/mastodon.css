@@ -1,0 +1,12 @@
+#mastodon.app-holder .column:last-child {
+  flex: 1;
+}
+
+#mastodon.app-holder .ui {
+  align-items: center;
+}
+
+#mastodon.app-holder .columns-area {
+  width: 100%;
+  max-width: 80rem;
+}

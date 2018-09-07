@@ -20,7 +20,7 @@ unclutter &
 # compton --config ~/.compton.conf --backend glx --vsync opengl-swc --xrender-sync --xrender-sync-fence &
 # compton --config ~/.compton.conf --backend glx --vsync opengl -b &
 # compton --config ~/.compton.conf --vsync opengl -b &
-compton --config ~/.compton.conf --backend glx --vsync opengl -b &
+# compton --config ~/.compton.conf --backend glx --vsync opengl -b &
 # compton --config ~/.compton.conf --vsync opengl -b &
 killall xiccd
 xiccd & # color correction
@@ -38,10 +38,10 @@ nm-applet &
 pasystray &
 
 # set wallpaper
-# ./.fehbg
+# ./.fehbg &
 # conky --conf .conkyleft.conkyrc &
 # conky --conf .conkyright.conkyrc &
-~/bin/randomWallpaper.sh &
+~/bin/dot-scripts/random-wallpaper.sh &
 
 # locker script
 xautolock -time 15 -locker ~/Sync/dotfiles/i3lock/lock-trans.sh &
