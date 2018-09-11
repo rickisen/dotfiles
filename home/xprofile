@@ -4,7 +4,7 @@
 [[ -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
 
 # enviorment variables
-export BROWSER=firefox &
+export BROWSER=qutebrowser &
 export EDITOR=vim &
 export TERMINAL=alacritty &
 export DE=i3 &
@@ -31,7 +31,7 @@ nvidia-settings -l &
 dunst -config .dunst/dunstrc &
 
 #audio
-pulseaudio --start &
+$(pulseaudio --kill ; pulseaudio --start) &
 
 # applets
 nm-applet &

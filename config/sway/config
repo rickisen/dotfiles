@@ -53,7 +53,7 @@ bindsym $mod+Ctrl+k exec ~/programming/i3-workspace-rotate/i3-workspace-rotate.s
 bindsym $mod+Ctrl+l exec ~/programming/i3-workspace-rotate/i3-workspace-rotate.sh right
 
 # screenlock
-bindsym $mod+Ctrl+Shift+l exec ~/Sync/dotfiles/i3lock/lock-trans.sh
+#bindsym $mod+Ctrl+Shift+l exec ~/Sync/dotfiles/i3lock/lock-trans.sh
 
 # Background processes
 bindsym $mod+b       exec setxkbmap se
@@ -140,7 +140,8 @@ bindsym $mod+Shift+Ctrl+q reload
 bindsym $mod+Shift+q restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-msg exit"
 
 # color class           border  backgr. text    indicator
 client.focused          #458588 #458588 #b0ceb6 #83a598
@@ -211,6 +212,6 @@ bindsym $mod+Shift+y border pixel 2
 
 for_window [class=".*"] title_format <span size="xx-small">  </span><span size="large"> <b>%title</b></span>  -  %class
 
-output "*" background /home/rickisen/Pictures/wallpaper/purpleTokyo.jpg fill
+# output "*" background /home/rickisen/Pictures/wallpaper/purpleTokyo.jpg fill
 
 # smart_borders on

@@ -26,15 +26,15 @@ mkdir -p ~/.cache/muttfolder/headers
 touch ~/.cache/mutt
 touch ~/.cache/muttfolder/certificates
 
-if [[ $1 == "desktop" ]] || [[ $2 == "desktop" ]]; then
-  ln $args home/Desktopi3Left.conkyrc     ~/.conkyleft.conkyrc
-  ln $args home/Desktopi3Right.conkyrc    ~/.conkyright.conkyrc
-  ln $args home/fehbg_desktop             ~/.fehbg
-else
-  ln $args home/Laptopi3Left-new.conkyrc  ~/.conkyleft.conkyrc
-  ln $args home/Laptopi3Right-new.conkyrc ~/.conkyright.conkyrc
-  ln $args home/fehbg_laptop              ~/.fehbg
-fi
+#if [[ $1 == "desktop" ]] || [[ $2 == "desktop" ]]; then
+#  ln $args home/Desktopi3Left.conkyrc     ~/.conkyleft.conkyrc
+#  ln $args home/Desktopi3Right.conkyrc    ~/.conkyright.conkyrc
+#  ln $args home/fehbg_desktop             ~/.fehbg
+#else
+#  ln $args home/Laptopi3Left-new.conkyrc  ~/.conkyleft.conkyrc
+#  ln $args home/Laptopi3Right-new.conkyrc ~/.conkyright.conkyrc
+#  ln $args home/fehbg_laptop              ~/.fehbg
+#fi
 
 # ==================================================
 # config folder
@@ -68,6 +68,7 @@ ln $args config/sway                      ~/.config/sway
 # themes folder
 # ==================================================
 
+mkdir ~/.themes
 ln $args themes/gtk3/oomox-gruvbox-gtk    ~/.themes/oomox-gruvbox-gtk
 ln $args themes/icons                     ~/.icons
 
@@ -80,5 +81,5 @@ ln $args scripts                          ~/bin/dot-scripts
 # ==================================================
 # local share
 # ==================================================
-mkdir -p ~/.local/share/qutebrowser
+mkdir -p ~/.local/share/qutebrowser/userscripts
 ln $args local/share/qutebrowser/userscripts/               ~/.local/share/qutebrowser/userscripts/

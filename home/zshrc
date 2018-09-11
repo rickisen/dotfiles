@@ -3774,7 +3774,7 @@ alias p='ping google.com'
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 # export npm_config_prefix=~/.nvm/versions/node/v8.0.0
 # PATH="$HOME/.node_modules/bin:$PATH" # comment out this on fresh installs
-source /usr/share/nvm/init-nvm.sh
+[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 
 # USER SCRIPTS ==================================================
 PATH="$HOME/bin:$PATH"
