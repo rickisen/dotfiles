@@ -12,19 +12,19 @@ rofi.key: F12
 rofi.rkey: mod1+F2
 rofi.skey: mod1+F3
 
-!rofi.fg: #ebdbb2
-!rofi.bg: #282828
-!rofi.hlfg: #fe8019
-!rofi.hlbg: #282828
-!rofi.bc: #ebdbb2
+!rofi.fg: #D8DEE9
+!rofi.bg: #2E3440
+!rofi.hlfg: #D08770
+!rofi.hlbg: #2E3440
+!rofi.bc: #D8DEE9
 
 ! Enable the extended coloring options
 rofi.color-enabled: true
 
 !                  bg       border   separator
-rofi.color-window: #282828, #a89984, #a89984
+rofi.color-window: #2E3440, #81A1C1, #81A1C1
 
 !                  bg       fg       bg-alt   hl-bg    hl-fg
-rofi.color-normal: #282828, #ebdbb2, #32302f, #665c54, #fbf1c7
-rofi.color-active: #d79921, #282828, #d79921, #fabd2f, #282828
-rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828
+rofi.color-normal: #3B4252, #D8DEE9, #2E3440, #4C566A, #ECEFF4
+rofi.color-active: #D08770, #2E3440, #D08770, #EBCB8B, #2E3440
+rofi.color-urgent: #BF616A, #2E3440, #cc241d, #fb4934, #2E3440
