@@ -18,10 +18,9 @@ unclutter &
 
 # Visual bling
 # compton --config ~/.compton.conf --backend glx --vsync opengl-swc --xrender-sync --xrender-sync-fence &
-# compton --config ~/.compton.conf --backend glx --vsync opengl -b &
 # compton --config ~/.compton.conf --vsync opengl -b &
-# compton --config ~/.compton.conf --backend glx --vsync opengl -b &
 # compton --config ~/.compton.conf --vsync opengl -b &
+compton --config ~/.compton.conf --backend glx --vsync opengl -b &
 killall xiccd
 xiccd & # color correction
 nvidia-settings -l &
@@ -31,7 +30,7 @@ nvidia-settings -l &
 dunst -config .dunst/dunstrc &
 
 #audio
-$(pulseaudio --kill ; pulseaudio --start) &
+#$(pulseaudio --kill ; pulseaudio --start) &
 
 # applets
 nm-applet &
