@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#read in resources
+read in resources
 [[ -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
 
 if [[ $HOST == "desktop" ]]; then
@@ -10,7 +10,7 @@ fi
 # enviorment variables
 export BROWSER=qutebrowser &
 export EDITOR=vim &
-export TERMINAL=alacritty &
+export TERMINAL=kitty &
 export DE=i3 &
 export QT_STYLE_OVERRIDE=gtk2 &
 
@@ -24,9 +24,9 @@ unclutter &
 # compton --config ~/.compton.conf --backend glx --vsync opengl-swc --xrender-sync --xrender-sync-fence &
 # compton --config ~/.compton.conf --vsync opengl -b &
 # compton --config ~/.compton.conf --vsync opengl -b &
-compton --config ~/.compton.conf --backend glx --vsync opengl -b &
-killall xiccd
-xiccd & # color correction
+compton --config ~/.compton.conf &
+# killall xiccd
+# xiccd & # color correction
 # xcalib -gc 0.8 -a -s 0 &
 
 #messages
