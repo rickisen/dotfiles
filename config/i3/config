@@ -41,29 +41,26 @@ bindsym $mod+a exec qutebrowser
 #terminal-apps
 bindsym $mod+s       exec alacritty -e ranger
 bindsym $mod+p       exec alacritty -e htop
-bindsym $mod+c       exec alacritty -e ~/bin/dot-scripts/cmus-launcher/cmus-launcher.sh
-bindsym $mod+m       exec alacritty -e ~/bin/dot-scripts/mutt-launcher/mutt-launcher.sh
+bindsym $mod+c       exec alacritty -e ~/bin/cmus-launcher
+bindsym $mod+m       exec alacritty -e ~/bin/mutt-launcher
 bindsym $mod+Shift+m exec alacritty -e pulsemixer
 # bindsym $mod+Shift+m exec alacritty -e alsamixer
 bindsym $mod+n       exec alacritty -e journalctl -f
 
 # change rotation of current display (output) with xrandr
-#bindsym $mod+z        exec ~/bin/dot-scripts/desktop-screen/only-hdmivga.sh
-#bindsym $mod+Shift+z  exec ~/bin/dot-scripts/desktop-screen/no-hdmivga.sh
-#bindsym $mod+Ctrl+z   exec ~/bin/dot-scripts/desktop-screen/with-hdmivga.sh
-bindsym $mod+Ctrl+h  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh left
-bindsym $mod+Ctrl+j  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh normal
-bindsym $mod+Ctrl+k  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh inverted
-bindsym $mod+Ctrl+l  exec ~/bin/i3-workspace-rotate/i3-workspace-rotate.sh right
+bindsym $mod+Ctrl+h  exec ~/bin/workspace-rotate left
+bindsym $mod+Ctrl+j  exec ~/bin/workspace-rotate normal
+bindsym $mod+Ctrl+k  exec ~/bin/workspace-rotate inverted
+bindsym $mod+Ctrl+l  exec ~/bin/workspace-rotate right
 
 # change wallpaper
-bindsym $mod+w       exec ~/bin/dot-scripts/random-wallpaper.sh
+bindsym $mod+w       exec ~/bin/random-wallpaper
 
 #make active window's colors inverted
-bindsym $mod+Shift+i exec ~/bin/dot-scripts/invert-active-window.sh
+bindsym $mod+Shift+i exec ~/bin/invert-active-window
 
 # screenlock
-bindsym $mod+Ctrl+Shift+l exec ~/bin/dot-scripts/i3lock/lock-trans.sh
+bindsym $mod+Ctrl+Shift+l exec ~/bin/i3lock/lock-trans
 
 # Background processes
 bindsym $mod+b       exec setxkbmap se
@@ -71,7 +68,7 @@ bindsym $mod+Shift+b exec setxkbmap gb
 # bindsym $mod+Shift+b exec setxkbmap us
 
 # Background processes
-# bindsym $mod+i exec ~/bin/trackpad-toggle.sh
+# bindsym $mod+i exec ~/bin/trackpad-toggle
 bindsym $mod+i exec  pactl set-card-profile "alsa_card.pci-0000_00_1b.0" "output:iec958-stereo+input:analog-stereo"
 
 # change focus

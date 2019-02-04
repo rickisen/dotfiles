@@ -38,7 +38,7 @@ pasystray &
 # conky --conf .conkyright.conkyrc &
 
 # locker script
-xautolock -time 15 -locker ~/Sync/dotfiles/i3lock/lock-trans.sh &
+xautolock -time 15 -locker ~/bin/i3lock/lock-trans.sh &
 
 # gnome keyring
 #eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
@@ -46,7 +46,7 @@ xautolock -time 15 -locker ~/Sync/dotfiles/i3lock/lock-trans.sh &
 #dbus-update-activation-environment --systemd DISPLAY &
 
 # set random wallpaper
-~/bin/randomWallpaper.sh &
+~/bin/randomWallpaper &
 
 # start wm
 exec i3

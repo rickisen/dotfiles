@@ -3,11 +3,9 @@
 #read in resources
 [[ -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
 
-# if [[ $HOST == "rickard-laptop" ]]; then
-#  xrandr --setprovideroutputsource modesetting NVIDIA-0
-#  xrandr --auto
-#  xrandr --dpi 96
-# fi
+if [[ $HOST == "desktop" ]]; then
+  /home/rickisen/.screenlayout/left-portrait.sh
+fi
 
 # enviorment variables
 export BROWSER=qutebrowser &
@@ -29,7 +27,6 @@ unclutter &
 compton --config ~/.compton.conf --backend glx --vsync opengl -b &
 killall xiccd
 xiccd & # color correction
-nvidia-settings -l &
 # xcalib -gc 0.8 -a -s 0 &
 
 #messages
@@ -46,10 +43,10 @@ pasystray &
 # ./.fehbg &
 # conky --conf .conkyleft.conkyrc &
 # conky --conf .conkyright.conkyrc &
-./bin/dot-scripts/random-wallpaper.sh &
+./bin/random-wallpaper &
 
 # locker script
-xautolock -time 15 -locker ~/Sync/dotfiles/i3lock/lock-trans.sh &
+xautolock -time 15 -locker ~/bin/i3lock/lock-trans.sh &
 
 # gnome keyring
 #eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
@@ -58,4 +55,3 @@ xautolock -time 15 -locker ~/Sync/dotfiles/i3lock/lock-trans.sh &
 
 #autostart
 #hexchat --minimize=2 &
-

@@ -3766,7 +3766,16 @@ alias aSs='pacaur -Ss $1'
 alias ass='pacaur -Ss $1'
 alias aS='pacaur -S $1'
 alias as='pacaur -S $1'
-alias p='ping google.com'
+
+#Systemd aliases
+alias senable='systemctl enable $1'
+alias sdisable='systemctl disable $1'
+alias sstatus='systemctl status $1'
+alias srestart='systemctl restart $1'
+alias sstart='systemctl start $1'
+alias sstop='systemctl stop $1'
+
+alias p='watch ping -c 1 -w 2 google.com'
 
 # NVM ==================================================
 
@@ -3776,8 +3785,13 @@ alias p='ping google.com'
 # PATH="$HOME/.node_modules/bin:$PATH" # comment out this on fresh installs
 [ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 
+# Anaconda  ==================================================
+# PATH="/opt/anaconda/bin:$PATH"
+
 # USER SCRIPTS ==================================================
 PATH="$HOME/bin:$PATH"
+
+# ruby  ==================================================
 PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
 
 # TRAVIS ==================================================

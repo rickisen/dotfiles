@@ -40,7 +40,7 @@ bindsym $mod+a exec qutebrowser --backend webengine
 #terminal-apps
 bindsym $mod+s       exec kitty ranger
 bindsym $mod+p       exec kitty htop
-bindsym $mod+c       exec kitty ~/Sync/dotfiles/scripts/cmus-launcher/cmus-launcher.sh
+bindsym $mod+c       exec kitty ~/bin/cmus-launcher
 bindsym $mod+Shift+m exec kitty alsamixer
 bindsym $mod+m       exec kitty pulsemixer
 bindsym $mod+w       exec kitty wicd-curses
@@ -53,7 +53,7 @@ bindsym $mod+Ctrl+k exec ~/programming/i3-workspace-rotate/i3-workspace-rotate.s
 bindsym $mod+Ctrl+l exec ~/programming/i3-workspace-rotate/i3-workspace-rotate.sh right
 
 # screenlock
-#bindsym $mod+Ctrl+Shift+l exec ~/Sync/dotfiles/i3lock/lock-trans.sh
+bindsym $mod+Ctrl+Shift+l exec ~/bin/i3lock/lock-trans.sh
 
 # Background processes
 bindsym $mod+b       exec setxkbmap se
@@ -212,6 +212,6 @@ bindsym $mod+Shift+y border pixel 2
 
 for_window [class=".*"] title_format <span size="xx-small">  </span><span size="large"> <b>%title</b></span>  -  %class
 
-# output "*" background /home/rickisen/Pictures/wallpaper/purpleTokyo.jpg fill
+output "*" background /home/rickisen/Pictures/wallpaper/purpleTokyo.jpg fill
 
 # smart_borders on

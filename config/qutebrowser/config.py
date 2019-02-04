@@ -1694,6 +1694,7 @@ config.bind('<Ctrl-I>', 'open-editor', mode='insert')
 # config.bind('<Shift-Ins>', 'insert-text {primary}', mode='insert')
 
 ## Bindings for passthrough mode
+config.bind('<Shift-Escape>', 'leave-mode', mode='passthrough')
 # config.bind('<Ctrl-V>', 'leave-mode', mode='passthrough')
 
 ## Bindings for prompt mode
@@ -1733,8 +1734,10 @@ config.bind('<Ctrl-I>', 'open-editor', mode='insert')
 # config.bind('y', 'prompt-accept yes', mode='yesno')
 
 config.bind('gr', 'set content.user_stylesheets ~/.config/qutebrowser/css/darkmode.css')
-config.bind('gc', 'set content.user_stylesheets ~/.config/qutebrowser/css/mastodon.css')
+config.bind('gm', 'set content.user_stylesheets ~/.config/qutebrowser/css/mastodon.css')
 config.bind('gd', 'set content.user_stylesheets []')
+
+config.bind('<Ctrl-M>', 'spawn --userscript view_in_mpv')
 
 # Use color scheme
 config.source('nord-qutebrowser.py')

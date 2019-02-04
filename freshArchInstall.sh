@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script for automatically installing all
+# Commands for automatically installing all
 # packages I need on a fresh os install
 
 # Booting =====================================
@@ -51,7 +51,7 @@ pacman -S \
   pulseaudio-bluetooth \
   pulsemixer \
   pasystray \
-  pavucontrol 
+  pavucontrol
 
 # Xorg ==============================
 #
@@ -62,25 +62,26 @@ pacman -S \
 # Gnome =======================================
 #
 pacman -S \
-  gnome 
+  gnome
 
 # i3 ==========================================
 #
 pacman -S \
   i3-gaps \
   i3lock \
-  i3status 
+  i3status
 
 # Sway ========================================
 #
 pacman -S \
   sway \
   dmenu \
-  i3status 
+  i3status
 
 # General Apps ================================
 #
 pacman -S \
+  cmus \
   kitty \
   htop \
   qutebrowser \
@@ -89,7 +90,9 @@ pacman -S \
   keynav \
   unclutter \
   feh \
-  xautolock
+  xautolock \
+  alacritty-terminfo \
+  alacritty
 
 # Aur / yay ===================================
 # git clone https://aur.archlinux.org/yay.git
@@ -97,7 +100,6 @@ pacman -S \
 # makepkg -si
 # cd ..
 # # rm -r yay
-# 
+#
 # yay -S \
-#   alacritty-terminfo-git \
-#   alacritty
+#   nerd-fonts-complete
