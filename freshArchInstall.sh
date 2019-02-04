@@ -94,6 +94,20 @@ pacman -S \
   alacritty-terminfo \
   alacritty
 
+# browsers ================================
+#
+pacman -S \
+  chromium \
+  opera \
+  firefox
+
+# media apps ================================
+#
+pacman -S \
+  gimp \
+  blender \
+  inkscape
+
 # Aur / yay ===================================
 # git clone https://aur.archlinux.org/yay.git
 # cd yay
