@@ -67,7 +67,8 @@ bindsym $mod+Ctrl+Shift+l exec ~/bin/dot-scripts/i3lock/lock-trans.sh
 
 # Background processes
 bindsym $mod+b       exec setxkbmap se
-bindsym $mod+Shift+b exec setxkbmap gb
+# bindsym $mod+Shift+b exec setxkbmap gb
+bindsym $mod+Shift+b exec setxkbmap us
 
 # Background processes
 # bindsym $mod+i exec ~/bin/trackpad-toggle.sh
@@ -154,11 +155,11 @@ bindsym $mod+Shift+q restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # color class           border  backgr. text    indicator
-client.focused          #5e81ac #5e81ac #8fbcbb #81a1c1
-client.focused_inactive #2e3440 #2e3440 #81a1c1 #434c5e
-client.unfocused        #2e3440 #2e3440 #d8dee9 #434c5e
-client.urgent           #bf616a #bf616a #a3be8c #a3be8c
-client.placeholder      #2e3440 #2e3440 #d08770 #434c5e
+client.focused          #98d1ce #98d1ce #0a0f14 #245361
+client.focused_inactive #081f2d #081f2d #33859d #888ba5
+client.unfocused        #081f2d #081f2d #d3ebe9 #888ba5
+client.urgent           #c33027 #c33027 #d3ebe9 #d3ebe9
+client.placeholder      #081f2d #081f2d #edb54b #888ba5
 
 # default border width
 new_float  normal 2
@@ -185,14 +186,14 @@ bindsym $mod+r mode "resize"
 bar {
   status_command i3status -c .config/i3/i3status.cfg
     colors {
-      background #434c5e
-        statusline #d8dee9
-        separator #b48ead
+      background #081f2d
+        statusline #d3ebe9
+        separator #98d1ce
 
-        focused_workspace  #ebcb8b #ebcb8b #2e3440
-        active_workspace   #2e3440 #2e3440 #8fbcbb
-        inactive_workspace #8fbcbb #8fbcbb #2e3440
-        urgent_workspace   #d8dee9 #bf616a #2e3440
+        focused_workspace  #98d1ce #98d1ce #081f2d
+        active_workspace   #081f2d #081f2d #4e5165
+        inactive_workspace #081f2d #081f2d #98d1ce
+        urgent_workspace   #c33027 #c33027 #081f2d
     }
 }
 

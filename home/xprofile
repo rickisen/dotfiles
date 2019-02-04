@@ -3,6 +3,12 @@
 #read in resources
 [[ -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
 
+# if [[ $HOST == "rickard-laptop" ]]; then
+#  xrandr --setprovideroutputsource modesetting NVIDIA-0
+#  xrandr --auto
+#  xrandr --dpi 96
+# fi
+
 # enviorment variables
 export BROWSER=qutebrowser &
 export EDITOR=vim &
@@ -40,7 +46,7 @@ pasystray &
 # ./.fehbg &
 # conky --conf .conkyleft.conkyrc &
 # conky --conf .conkyright.conkyrc &
-~/bin/dot-scripts/random-wallpaper.sh &
+./bin/dot-scripts/random-wallpaper.sh &
 
 # locker script
 xautolock -time 15 -locker ~/Sync/dotfiles/i3lock/lock-trans.sh &
