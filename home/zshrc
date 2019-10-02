@@ -3732,7 +3732,8 @@ PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 # ANDROID ==================================================
 
-export ANDROID_HOME=/opt/android-sdk
+# export ANDROID_HOME=/opt/android-sdk
+export ANDROID_HOME=~/Android/Sdk
 export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
 export USE_SDK_WRAPPER="TRUE"
 
@@ -3776,6 +3777,8 @@ alias sstart='systemctl start $1'
 alias sstop='systemctl stop $1'
 
 alias p='watch ping -c 1 -w 2 google.com'
+
+alias suspend='systemctl suspend'
 
 # NVM ==================================================
 

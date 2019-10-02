@@ -3,9 +3,11 @@
 read in resources
 [[ -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
 
-if [[ $HOST == "desktop" ]]; then
-  /home/rickisen/.screenlayout/left-portrait.sh
-fi
+[[ -f ./home/rickisen/.screenlayout/default.sh  ]] && ./home/rickisen/.screenlayout/default.sh
+
+# if [[ $HOST == "desktop" ]]; then
+#   /home/rickisen/.screenlayout/left-portrait.sh
+# fi
 
 # enviorment variables
 export BROWSER=qutebrowser &

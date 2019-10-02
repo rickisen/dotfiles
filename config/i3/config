@@ -60,12 +60,11 @@ bindsym $mod+w       exec ~/bin/random-wallpaper
 bindsym $mod+Shift+i exec ~/bin/invert-active-window
 
 # screenlock
-bindsym $mod+Ctrl+Shift+l exec ~/bin/i3lock/lock-trans
+bindsym $mod+Ctrl+Shift+l exec ~/bin/i3lock/lock-trans.sh
 
 # Background processes
 bindsym $mod+b       exec setxkbmap se
 bindsym $mod+Shift+b exec setxkbmap gb
-# bindsym $mod+Shift+b exec setxkbmap us
 
 # Background processes
 # bindsym $mod+i exec ~/bin/trackpad-toggle
@@ -224,6 +223,9 @@ bindsym $mod+Shift+y border pixel 2
 for_window [class=".*"] title_format <span size="xx-small">  </span><span size="large"> <b>%title</b></span>  -  %class
 
 for_window [class="Godot" instance="Godot_Engine"] floating enable
+for_window [class="Emulator"] floating disable
+
+no_focus [class="qutebrowser"]
 
 # smart_borders on
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings

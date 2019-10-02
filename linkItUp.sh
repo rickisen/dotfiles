@@ -91,6 +91,7 @@ ln $args scripts/trackpad-toggle.sh           ~/bin/trackpad-toggle
 ln $args scripts/wacom-fix.sh                 ~/bin/wacom-fix
 ln $args scripts/workspace-rotate.sh          ~/bin/workspace-rotate
 ln $args scripts/ips.sh                       ~/bin/ips
+ln $args scripts/integrity-check.sh           ~/bin/integrity-check
 
 # ==================================================
 # local/share
