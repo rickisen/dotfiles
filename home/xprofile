@@ -3,8 +3,8 @@
 read in resources
 [[ -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
 
-if [[ $HOST == "desktop" ]]; then
-  /home/rickisen/.screenlayout/left-portrait.sh
+if [[ $HOST -eq "desktop" ]]; then
+  /home/rickisen/.screenlayout/default.sh
 fi
 
 # enviorment variables
@@ -24,7 +24,7 @@ unclutter &
 # compton --config ~/.compton.conf --backend glx --vsync opengl-swc --xrender-sync --xrender-sync-fence &
 # compton --config ~/.compton.conf --vsync opengl -b &
 # compton --config ~/.compton.conf --vsync opengl -b &
-compton --config ~/.compton.conf &
+# compton --config ~/.compton.conf &
 # killall xiccd
 # xiccd & # color correction
 # xcalib -gc 0.8 -a -s 0 &

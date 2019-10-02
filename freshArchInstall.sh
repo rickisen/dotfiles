@@ -105,6 +105,7 @@ pacman -S \
 #
 pacman -S \
   gimp \
+  imagemagick \
   blender \
   inkscape
 

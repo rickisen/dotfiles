@@ -41,7 +41,7 @@ bindsym $mod+a exec qutebrowser
 #terminal-apps
 bindsym $mod+s       exec kitty -e ranger
 bindsym $mod+p       exec kitty -e htop
-bindsym $mod+c       exec kitty -e ~/bin/cmus-launcher
+bindsym $mod+c       exec kitty -e cmus
 bindsym $mod+m       exec kitty -e ~/bin/mutt-launcher
 bindsym $mod+Shift+m exec kitty -e pulsemixer
 # bindsym $mod+Shift+m exec kitty -e alsamixer
@@ -224,6 +224,9 @@ bindsym $mod+Shift+y border pixel 2
 for_window [class=".*"] title_format <span size="xx-small">  </span><span size="large"> <b>%title</b></span>  -  %class
 
 for_window [class="Godot" instance="Godot_Engine"] floating enable
+
+# focus_on_window_activation <smart|urgent|focus|none>
+focus_on_window_activation urgent
 
 # smart_borders on
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings

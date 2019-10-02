@@ -786,9 +786,7 @@ c.downloads.remove_finished = 5000
 ## `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
-# c.editor.command = ['gvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
-#c.editor.command = ['alacritty', '-e', 'vim', '+call cursor({line0}, {column0})', '{file}']
-c.editor.command = ['alacritty', 'vim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
+c.editor.command = ['alacritty', '-e', 'vim', '-c', 'startinsert', '+call cursor({line0}, {column})', '--cmd', 'set ft=markdown', '{file}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
@@ -1735,7 +1733,9 @@ config.bind('<Shift-Escape>', 'leave-mode', mode='passthrough')
 
 config.bind('gr', 'set content.user_stylesheets ~/.config/qutebrowser/css/darkmode.css')
 config.bind('gm', 'set content.user_stylesheets ~/.config/qutebrowser/css/mastodon.css')
+config.bind('gy', 'set content.user_stylesheets ~/.config/qutebrowser/css/youtube.css')
 config.bind('gd', 'set content.user_stylesheets []')
+config.set('content.user_stylesheets', "~/.config/qutebrowser/css/youtube.css")
 
 config.bind('<Ctrl-M>', 'spawn --userscript view_in_mpv')
 

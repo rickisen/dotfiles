@@ -3733,8 +3733,9 @@ PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 # ANDROID ==================================================
 
 export ANDROID_HOME=/opt/android-sdk
-export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
-export USE_SDK_WRAPPER="TRUE"
+# export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
+# export USE_SDK_WRAPPER="TRUE"
+alias emulator='~/Android/Sdk/emulator/emulator -avd pixel2'
 
 # GOLANG ==================================================
 
