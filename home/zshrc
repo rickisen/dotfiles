@@ -3778,6 +3778,8 @@ alias sstop='systemctl stop $1'
 
 alias p='watch ping -c 1 -w 2 google.com'
 
+alias suspend='systemctl suspend'
+
 # NVM ==================================================
 
 # export NVM_DIR="$HOME/.nvm"

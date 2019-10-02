@@ -1418,6 +1418,7 @@ c.tabs.show = 'multiple'
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
 # c.url.start_pages = ['https://start.duckduckgo.com']
+c.url.start_pages = ['https://linuxrocks.online/web/timelines/public/local']
 
 ## URL parameters to strip with `:yank url`.
 ## Type: List of String
