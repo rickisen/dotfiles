@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read in resources
+# read in resources
 [[ -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
 
 [[ -f ./home/rickisen/.screenlayout/default.sh  ]] && ./home/rickisen/.screenlayout/default.sh
