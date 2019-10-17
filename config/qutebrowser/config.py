@@ -786,7 +786,7 @@ c.downloads.remove_finished = 5000
 ## `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
-c.editor.command = ['alacritty', '--class', 'QuteFloat' , '-e', 'vim', '-c', 'startinsert', '+call cursor({line0}, {column})', '--cmd', 'set ft=markdown', '{file}']
+c.editor.command = ['kitty', '--class', 'QuteFloat' , '-e', 'vim', '-c', 'startinsert', '+call cursor({line0}, {column})', '--cmd', 'set ft=markdown', '{file}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
@@ -1741,4 +1741,4 @@ config.set('content.user_stylesheets', "~/.config/qutebrowser/css/youtube.css")
 config.bind('<Ctrl-M>', 'spawn --userscript view_in_mpv')
 
 # Use color scheme
-config.source('nord-qutebrowser.py')
+config.source('gotham-qutebrowser.py')
