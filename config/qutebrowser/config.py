@@ -786,7 +786,7 @@ c.downloads.remove_finished = 5000
 ## `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
-c.editor.command = ['alacritty', '-e', 'vim', '-c', 'startinsert', '+call cursor({line0}, {column})', '--cmd', 'set ft=markdown', '{file}']
+c.editor.command = ['alacritty', '--class', 'QuteFloat' , '-e', 'vim', '-c', 'startinsert', '+call cursor({line0}, {column})', '--cmd', 'set ft=markdown', '{file}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding

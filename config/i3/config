@@ -14,7 +14,7 @@ set $mod Mod4
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
 # font pango:Cantarell, 8
-font pango:Source Code Pro Semibold, 7
+font pango:Source Code Pro Semibold, 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -225,10 +225,11 @@ bindsym $mod+Shift+y border pixel 2
 
 for_window [class=".*"] title_format <span size="xx-small">  </span><span size="large"> <b>%title</b></span>  -  %class
 
+for_window [instance="QuteFloat"] floating enable
 for_window [class="Godot" instance="Godot_Engine"] floating enable
 for_window [class="Emulator"] floating disable
 
-no_focus [class="qutebrowser"]
+# no_focus [class="qutebrowser"]
 
 # focus_on_window_activation <smart|urgent|focus|none>
 focus_on_window_activation urgent
