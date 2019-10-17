@@ -56,7 +56,10 @@ bindsym $mod+Ctrl+l  exec ~/bin/workspace-rotate right
 # change wallpaper
 bindsym $mod+w       exec ~/bin/random-wallpaper
 
-#make active window's colors inverted
+#make active window transparent (toggles)
+bindsym $mod+Shift+i exec ~/bin/transparent-active-window
+
+#make active window's colors inverted (toggles)
 bindsym $mod+Shift+i exec ~/bin/invert-active-window
 
 # screenlock

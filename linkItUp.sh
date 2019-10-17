@@ -81,6 +81,7 @@ mkdir ~/bin
 ln $args scripts/i3lock                       ~/bin/i3lock
 ln $args scripts/cmus-launcher.sh             ~/bin/cmus-launcher
 ln $args scripts/invert-active-window.sh      ~/bin/invert-active-window
+ln $args scripts/transparent-active-window.sh ~/bin/transparent-active-window
 ln $args scripts/keyboard-backlight-toggle.sh ~/bin/keyboard-backlight-toggle
 ln $args scripts/magnetToTorrent.sh           ~/bin/magnetToTorrent
 ln $args scripts/mutt-launcher.sh             ~/bin/mutt-launcher
