@@ -25,6 +25,7 @@ pacman -S \
   w3m \
   vim \
   git \
+  highlight \
   base-devel
 
 # GPU drivers =================================
