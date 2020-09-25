@@ -3,14 +3,14 @@
 # read in resources
 [[ -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
 
-[[ -f ./home/rickisen/.screenlayout/default.sh  ]] && ./home/rickisen/.screenlayout/default.sh
+[[ -f ~/.screenlayout/default.sh  ]] && ~/.screenlayout/default.sh
 
 # enviorment variables
-export BROWSER=qutebrowser &
-export EDITOR=vim &
-export TERMINAL=kitty &
-export DE=i3 &
-export QT_STYLE_OVERRIDE=gtk2 &
+export BROWSER=qutebrowser
+export EDITOR=vim
+export TERMINAL=kitty
+export DE=i3
+export QT_STYLE_OVERRIDE=gtk2
 
 # keyboard and mouse modifications, (swedish keyboard)
 setxkbmap gb &
@@ -19,7 +19,7 @@ keynav &
 unclutter &
 
 # Visual bling
-compton --config ~/Programming/mine/dotfiles/home/compton.conf &
+[[ -f ~/bin/run-compton  ]] && ~/bin/run-compton &
 # killall xiccd
 # xiccd & # color correction
 # xcalib -gc 0.8 -a -s 0 &

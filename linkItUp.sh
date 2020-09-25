@@ -24,6 +24,7 @@ ln $args home/compton.conf                ~/.compton.conf
 ln $args home/rtorrent.rc                 ~/.rtorrent.rc
 ln $args home/tmux.conf                   ~/.tmux.conf
 ln $args home/xprofile                    ~/.xprofile
+ln $args home/xinitrc                     ~/.xinitrc
 ln $args home/Xresources                  ~/.Xresources
 ln $args home/zshrc                       ~/.zshrc
 
@@ -93,6 +94,7 @@ ln $args scripts/wacom-fix.sh                 ~/bin/wacom-fix
 ln $args scripts/workspace-rotate.sh          ~/bin/workspace-rotate
 ln $args scripts/ips.sh                       ~/bin/ips
 ln $args scripts/integrity-check.sh           ~/bin/integrity-check
+ln $args scripts/run-compton.sh               ~/bin/run-compton
 
 # ==================================================
 # local/share
