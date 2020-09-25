@@ -1504,7 +1504,7 @@ bind2maps emacs viins       -- -s '^xi' insert-unicode-char
 # use the new *-pattern-* widgets for incremental history search
 if zrcgotwidget history-incremental-pattern-search-backward; then
     for seq wid in '^r' history-incremental-pattern-search-backward \
-                   '^s' history-incremental-pattern-search-forward
+                   '^n' history-incremental-pattern-search-forward
     do
         bind2maps emacs viins vicmd -- -s $seq $wid
     done
@@ -3741,6 +3741,8 @@ alias emulator='~/Android/Sdk/emulator/emulator -avd pixel2'
 
 export GOPATH=$HOME/.go
 PATH="$GOPATH/bin:$PATH"
+export GOPRIVATE=gitlab.com/pubfed/* # go mod why
+export GONOSUMDB=gitlab.com/pubfed/* # go mod why
 
 # ALIASES ==================================================
 
@@ -3759,6 +3761,7 @@ alias gpu='git pull'
 alias gra='git remote add'
 alias grr='git remote rm'
 alias gs='git status'
+alias gdh='git diff HEAD~1'
 
 #Pacman aliases
 alias Ss='pacman -Ss $1'
@@ -3775,10 +3778,20 @@ alias sstatus='systemctl status $1'
 alias srestart='systemctl restart $1'
 alias sstart='systemctl start $1'
 alias sstop='systemctl stop $1'
-
-alias p='watch ping -c 1 -w 2 google.com'
-
 alias suspend='systemctl suspend'
+
+#npm aliases
+alias nd='npm run dev'
+alias ns='npm start'
+alias nb='npm run build'
+
+#Misc aliases
+alias p='watch ping -c 1 -w 2 google.com'
+alias todos='grep -irn -A 1 --exclude-dir=node_modules --exclude-dir=".git" --exclude-dir=".next" "TODO\:\|FIXME:" .'
+alias jvim="vim -c 'set filetype=json'"
+alias yvim="vim -c 'set filetype=yml'"
+
+alias cdtemp='cd "$(mktemp -d)"'
 
 # NVM ==================================================
 
@@ -3786,7 +3799,15 @@ alias suspend='systemctl suspend'
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 # export npm_config_prefix=~/.nvm/versions/node/v8.0.0
 # PATH="$HOME/.node_modules/bin:$PATH" # comment out this on fresh installs
-[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
+# [ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
+# #
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export PATH=/home/rickisen/.fnm/current/bin:$PATH
+export FNM_MULTISHELL_PATH=/home/rickisen/.fnm/current
+export FNM_DIR=/home/rickisen/.fnm
+export FNM_NODE_DIST_MIRROR=https://nodejs.org/dist
+export FNM_LOGLEVEL=info
 
 # Anaconda  ==================================================
 # PATH="/opt/anaconda/bin:$PATH"
@@ -3795,7 +3816,30 @@ alias suspend='systemctl suspend'
 PATH="$HOME/bin:$PATH"
 
 # ruby  ==================================================
-PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
+# $(ruby -e 'puts Gem.user_dir')/bin
+# PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
+# PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
+# eval "$(rbenv init -)"
 
-# TRAVIS ==================================================
-[ -f /home/rickisen/.travis/travis.sh ] && source /home/rickisen/.travis/travis.sh
+# KRONANS ==================================================
+# alias test='export AWS_PROFILE=test; kubectl config use-context arn:aws:eks:eu-west-1:656276796760:cluster/KronanPrivate'
+# alias dev='export AWS_PROFILE=dev; kubectl config use-context arn:aws:eks:eu-west-1:567527177510:cluster/KronanPrivate'
+# alias prod='export AWS_PROFILE=prod; kubectl config use-context arn:aws:eks:eu-west-1:100630763588:cluster/KronanPrivate'
+
+kdlog() {
+  kubectl logs --max-log-requests=100 -f -l app=$1 -n acc1 -c $1
+}
+
+kdjlog() {
+  kubectl logs --max-log-requests=100 -f -l app=$1 -n acc1 -c $1 | grep '^{' | jq
+}
+
+process-for-port() {
+  ss -tulpn | grep "$1"
+}
+
+alias radiohead='mpv --no-video --shuffle "https://www.youtube.com/playlist?list=PLukmsaXDPJie7L7Ihn63HJhA6YMp7tUUr"'
+alias tool='mpv --no-video --shuffle "https://www.youtube.com/playlist?list=PLESF6Vbm19P2IGN0wvksh-SYVWWj4lrxN"'
+alias metallica='mpv --no-video --shuffle "https://www.youtube.com/playlist?list=PLenUrOlreSp6EXV4PJWLEvLIdnacjn-2w"'
+alias nirvana='mpv --no-video --shuffle "https://www.youtube.com/playlist?list=PL2DB335559E3070E3"'
+alias portishead='mpv --no-video --shuffle  "https://www.youtube.com/playlist?list=OLAK5uy_nMft1HP8iD7Wu0f0PfOKfao7r_nrBz6O8"'
