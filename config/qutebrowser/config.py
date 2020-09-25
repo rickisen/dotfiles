@@ -831,7 +831,8 @@ c.editor.command = ['kitty', '--class', 'QuteFloat' , '-e', 'vim', '-c', 'starti
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
 ## Type: Font
-c.fonts.monospace = '"Source Code Pro", "xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+# c.fonts.monospace = '"Source Code Pro", "xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.fonts.default_family = [ "Source Code Pro", "xos4 Terminus", "Terminus", "Monospace", "DejaVu Sans Mono" ]
 
 ## Font used for prompts.
 ## Type: Font
@@ -843,7 +844,7 @@ c.fonts.monospace = '"Source Code Pro", "xos4 Terminus", Terminus, Monospace, "D
 
 ## Font used in the tab bar.
 ## Type: QtFont
-# c.fonts.tabs = '10pt monospace'
+# c.fonts.tabs = '10pt Source Code Pro Semibold'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily

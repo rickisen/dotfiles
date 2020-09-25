@@ -229,7 +229,7 @@ c.colors.statusbar.passthrough.fg = gotham['gotham5']
 
 ## Background color of the statusbar in private browsing mode.
 ## Type: QssColor
-c.colors.statusbar.private.bg = gotham['gotham15']
+c.colors.statusbar.private.bg = gotham['gotham9']
 
 ## Foreground color of the statusbar in private browsing mode.
 ## Type: QssColor
@@ -266,10 +266,10 @@ c.colors.statusbar.url.success.https.fg = gotham['gotham14']
 c.colors.statusbar.url.warn.fg = gotham['gotham12']
 
 ## Background color of the tab bar.
-c.colors.tabs.bar.bg = gotham['gotham3']
+c.colors.tabs.bar.bg = gotham['gotham2']
 
 ## Background color of unselected even tabs.
-c.colors.tabs.even.bg = gotham['gotham3']
+c.colors.tabs.even.bg = gotham['gotham2']
 
 ## Foreground color of unselected even tabs.
 c.colors.tabs.even.fg = gotham['gotham5']
@@ -293,22 +293,22 @@ c.colors.tabs.indicator.error = gotham['gotham11']
 c.colors.tabs.indicator.system = 'none'
 
 ## Background color of unselected odd tabs.
-c.colors.tabs.odd.bg = gotham['gotham3']
+c.colors.tabs.odd.bg = gotham['gotham2']
 
 ## Foreground color of unselected odd tabs.
 c.colors.tabs.odd.fg = gotham['gotham5']
 
 # ## Background color of selected even tabs.
-c.colors.tabs.selected.even.bg = gotham['gotham0']
+c.colors.tabs.selected.even.bg = gotham['gotham4']
 
 # ## Foreground color of selected even tabs.
-c.colors.tabs.selected.even.fg = gotham['gotham5']
+c.colors.tabs.selected.even.fg = gotham['gotham0']
 
 # ## Background color of selected odd tabs.
-c.colors.tabs.selected.odd.bg = gotham['gotham0']
+c.colors.tabs.selected.odd.bg = gotham['gotham4']
 
 # ## Foreground color of selected odd tabs.
-c.colors.tabs.selected.odd.fg = gotham['gotham5']
+c.colors.tabs.selected.odd.fg = gotham['gotham0']
 
 ## Background color for webpages if unset (or empty to use the theme's
 ## color)
