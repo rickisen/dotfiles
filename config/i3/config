@@ -21,7 +21,7 @@ floating_modifier $mod
 
 # size of floating windows
 floating_minimum_size 350 x 200
-floating_maximum_size 1300 x 1020
+# floating_maximum_size 1300 x 1020
 
 # start a terminal
 #bindsym $mod+Return exec kitty -e zsh -c "tmux"
@@ -42,8 +42,7 @@ bindsym $mod+a exec qutebrowser
 bindsym $mod+s       exec kitty -e ranger
 bindsym $mod+p       exec kitty -e htop
 bindsym $mod+c       exec kitty -e cmus
-bindsym $mod+m       exec kitty -e ~/bin/mutt-launcher
-bindsym $mod+Shift+m exec kitty -e pulsemixer
+bindsym $mod+m       exec kitty --class PulseMixerFloat -e pulsemixer
 # bindsym $mod+Shift+m exec kitty -e alsamixer
 bindsym $mod+n       exec kitty -e journalctl -f
 
@@ -120,6 +119,9 @@ bindsym $mod+Tab focus mode_toggle
 # focus the parent container
 bindsym $mod+Shift+p focus parent
 
+# focus the parent container
+bindsym $mod+Ctrl+p focus child
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -157,7 +159,7 @@ bindsym $Ctrl+Alt+Backspace exec "pkill X"
 
 # color class           border  backgr. text    indicator
 client.focused          #98d1ce #98d1ce #0a0f14 #245361
-client.focused_inactive #081f2d #081f2d #33859d #888ba5
+client.focused_inactive #98d1ce #081f2d #d3ebe9 #888ba5
 client.unfocused        #081f2d #081f2d #d3ebe9 #888ba5
 client.urgent           #c33027 #c33027 #d3ebe9 #d3ebe9
 client.placeholder      #081f2d #081f2d #edb54b #888ba5
@@ -223,8 +225,13 @@ bindsym $mod+g floating toggle, resize set 1300px 1020px, move position center
 bindsym $mod+y border normal 2
 bindsym $mod+Shift+y border pixel 2
 
-for_window [class=".*"] title_format <span size="xx-small">  </span><span size="large"> <b>%title</b></span>  -  %class
+for_window [class=".*"] title_format <span size="large">%class</span> | <b>%title</b>
 
+for_window [instance="PulseMixerFloat"] floating enable
+for_window [instance="PulseMixerFloat"] move position 1310 845
+for_window [instance="PulseMixerFloat"] resize set 600 200
+
+for_window [instance="MpvFloat"] floating enable
 for_window [instance="QuteFloat"] floating enable
 for_window [class="Godot" instance="Godot_Engine"] floating enable
 for_window [class="Emulator"] floating disable
