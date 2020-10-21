@@ -3711,16 +3711,16 @@ zrclocal
 #     test -z "$TMUX" && (tmux attach || tmux new-session)
 # fi
 
-# workaround for handling TERM variable in multiple tmux sessions properly from http://sourceforge.net/p/tmux/mailman/message/32751663/ by Nicholas Marriott
-if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
-  case $(tmux showenv TERM 2>/dev/null) in
-    *256color) ;&
-    TERM=fbterm)
-      TERM=screen-256color ;;
-    *)
-      TERM=screen
-  esac
-fi
+# # workaround for handling TERM variable in multiple tmux sessions properly from http://sourceforge.net/p/tmux/mailman/message/32751663/ by Nicholas Marriott
+# if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
+#   case $(tmux showenv TERM 2>/dev/null) in
+#     *256color) ;&
+#     TERM=fbterm)
+#       TERM=screen-256color ;;
+#     *)
+#       TERM=screen
+#   esac
+# fi
 
 # PERL Path mods ==================================================
 
@@ -3820,6 +3820,13 @@ PATH="$HOME/bin:$PATH"
 # PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 # PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
 # eval "$(rbenv init -)"
+
+# window title ==================================================
+DISABLE_AUTO_TITLE="true"
+function precmd () {
+  window_title="\033]0;$(basename $PWD)\007"
+  echo -ne "$window_title"
+}
 
 # KRONANS ==================================================
 # alias test='export AWS_PROFILE=test; kubectl config use-context arn:aws:eks:eu-west-1:656276796760:cluster/KronanPrivate'
