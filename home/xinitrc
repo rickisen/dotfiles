@@ -19,8 +19,9 @@ keynav &
 unclutter &
 
 # Visual bling
-compton --config ~/programming/mine/dotfiles/home/compton.conf &
+# compton --config ~/programming/mine/dotfiles/home/compton.conf &
 # compton --config ~/.compton.conf --backend glx --vsync opengl -b &
+picom &
 # killall xiccd
 # xiccd & # color correction
 # xcalib -gc 0.8 -a -s 0 &
@@ -51,6 +52,9 @@ xautolock -time 15 -locker ~/bin/i3lock/lock-trans.sh &
 
 # set random wallpaper
 ~/bin/randomWallpaper.sh &
+
+# touchpad two finger click
+xinput set-prop 12 338 0 1
 
 # start wm
 exec i3

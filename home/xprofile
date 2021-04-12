@@ -19,13 +19,14 @@ keynav &
 unclutter &
 
 # Visual bling
-[[ -f ~/bin/run-compton  ]] && ~/bin/run-compton &
+# [[ -f ~/bin/run-compton  ]] && ~/bin/run-compton &
+picom &
 # killall xiccd
 # xiccd & # color correction
 # xcalib -gc 0.8 -a -s 0 &
 
 #messages
-dunst -config .dunst/dunstrc &
+dunst -config .config/dunst/dunstrc &
 
 #audio
 #$(pulseaudio --kill ; pulseaudio --start) &
@@ -47,6 +48,9 @@ xautolock -time 15 -locker ~/bin/i3lock/lock-trans.sh &
 #eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 #export SSH_AUTH_SOCK
 #dbus-update-activation-environment --systemd DISPLAY &
+
+# touchpad two finger click
+xinput set-prop 12 338 0 1
 
 #autostart
 #hexchat --minimize=2 &
