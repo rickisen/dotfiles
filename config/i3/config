@@ -5,6 +5,12 @@
 #super
 set $mod Mod4
 
+# polkit authentication agent, shows password inputs when apps require it
+exec --no-startup-id lxpolkit
+
+# touchpad two finger click
+exec --no-startup-id xinput set-prop 15 338 0 1
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -24,8 +30,8 @@ floating_minimum_size 350 x 200
 # floating_maximum_size 1300 x 1020
 
 # start a terminal
-#bindsym $mod+Return exec kitty -e zsh -c "tmux"
-bindsym $mod+Return exec kitty -e zsh -c "tmux"
+#bindsym $mod+Return exec gnome-terminal -- zsh -c "tmux"
+bindsym $mod+Return exec gnome-terminal -- zsh -c "tmux"
 # kill focused window
 bindsym $mod+Shift+c kill
 
@@ -39,12 +45,12 @@ bindsym $mod+space exec rofi -show run
 bindsym $mod+a exec qutebrowser
 
 #terminal-apps
-bindsym $mod+s       exec kitty -e ranger
-bindsym $mod+p       exec kitty -e htop
-bindsym $mod+c       exec kitty -e cmus
-bindsym $mod+m       exec kitty --class PulseMixerFloat -e pulsemixer
-# bindsym $mod+Shift+m exec kitty -e alsamixer
-bindsym $mod+n       exec kitty -e journalctl -f
+bindsym $mod+s       exec gnome-terminal -- ranger
+bindsym $mod+p       exec gnome-terminal -- htop
+bindsym $mod+c       exec gnome-terminal -- cmus
+bindsym $mod+m       exec gnome-terminal --class PulseMixerFloat -- pulsemixer
+# bindsym $mod+Shift+m exec gnome-terminal -- alsamixer
+bindsym $mod+n       exec gnome-terminal -- journalctl -f
 
 # change rotation of current display (output) with xrandr
 bindsym $mod+Ctrl+h  exec ~/bin/workspace-rotate left

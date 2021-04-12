@@ -7,8 +7,8 @@
 
 # enviorment variables
 export BROWSER=qutebrowser
-export EDITOR=vim
-export TERMINAL=kitty
+export EDITOR=nvim
+export TERMINAL=gnome-terminal
 export DE=i3
 export QT_STYLE_OVERRIDE=gtk2
 
