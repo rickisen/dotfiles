@@ -20,7 +20,7 @@ exec --no-startup-id xinput set-prop 15 338 0 1
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
 # font pango:Cantarell, 8
-font pango:Source Code Pro Semibold, 8
+font pango:Source Code Pro Semibold, 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -164,11 +164,11 @@ bindsym $mod+Shift+e exec "i3-msg exit"
 bindsym $Ctrl+Alt+Backspace exec "pkill X"
 
 # color class           border  backgr. text    indicator
-client.focused          #98d1ce #98d1ce #0a0f14 #245361
-client.focused_inactive #98d1ce #081f2d #d3ebe9 #888ba5
-client.unfocused        #081f2d #081f2d #d3ebe9 #888ba5
-client.urgent           #c33027 #c33027 #d3ebe9 #d3ebe9
-client.placeholder      #081f2d #081f2d #edb54b #888ba5
+client.focused          #8be9fd #8be9fd #21222c #8f9ed3
+client.focused_inactive #8be9fd #1f1f1f #f8f8f2 #44475a
+client.unfocused        #1f1f1f #1f1f1f #f8f8f2 #44475a
+client.urgent           #ff5555 #ff5555 #f8f8f2 #f8f8f2
+client.placeholder      #1f1f1f #1f1f1f #f1fa8c #44475a
 
 # default border width
 new_float  normal 2
@@ -195,14 +195,14 @@ bindsym $mod+r mode "resize"
 bar {
   status_command i3status -c .config/i3/i3status.cfg
     colors {
-      background #081f2d
-        statusline #d3ebe9
-        separator #98d1ce
+      background #1f1f1f
+        statusline #f8f8f2
+        separator #8be9fd
 
-        focused_workspace  #98d1ce #98d1ce #081f2d
-        active_workspace   #081f2d #081f2d #4e5165
-        inactive_workspace #081f2d #081f2d #98d1ce
-        urgent_workspace   #c33027 #c33027 #081f2d
+        focused_workspace  #bd93f9 #bd93f9 #1f1f1f
+        active_workspace   #44475a #44475a #f8f8f2
+        inactive_workspace #6272a4 #6272a4 #1f1f1f
+        urgent_workspace   #ff5555 #ff5555 #1f1f1f
     }
 }
 
