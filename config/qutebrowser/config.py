@@ -1742,4 +1742,4 @@ config.set('content.user_stylesheets', "~/.config/qutebrowser/css/youtube.css")
 config.bind('<Ctrl-M>', 'spawn --userscript view_in_mpv')
 
 # Use color scheme
-config.source('gotham-qutebrowser.py')
+config.source('dracula-qutebrowser.py')
