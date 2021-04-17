@@ -158,8 +158,8 @@ bindsym $mod+Shift+e exec "i3-msg exit"
 bindsym $Ctrl+Alt+Backspace exec "pkill X"
 
 # color class           border  backgr. text    indicator
-client.focused          #8be9fd #8be9fd #21222c #8f9ed3
-client.focused_inactive #8be9fd #1f1f1f #f8f8f2 #44475a
+client.focused          #bd93f9 #bd93f9 #21222c #8f9ed3
+client.focused_inactive #44475a #44475a #f8f8f2 #44475a
 client.unfocused        #1f1f1f #1f1f1f #f8f8f2 #44475a
 client.urgent           #ff5555 #ff5555 #f8f8f2 #f8f8f2
 client.placeholder      #1f1f1f #1f1f1f #f1fa8c #44475a
@@ -225,7 +225,7 @@ bindsym $mod+g floating toggle, resize set 1300px 1020px, move position center
 bindsym $mod+y border normal 2
 bindsym $mod+Shift+y border pixel 2
 
-for_window [class=".*"] title_format <span size="large">%class</span> | <b>%title</b>
+for_window [class=".*"] title_format <span> %class</span> | <b>%title</b>
 
 for_window [instance="PulseMixerFloat"] floating enable
 for_window [instance="PulseMixerFloat"] move position 1310 845
