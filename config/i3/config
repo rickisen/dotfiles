@@ -164,15 +164,15 @@ bindsym $mod+Shift+e exec "i3-msg exit"
 bindsym $Ctrl+Alt+Backspace exec "pkill X"
 
 # color class           border  backgr. text    indicator
-client.focused          #bd93f9 #bd93f9 #21222c #8f9ed3
-client.focused_inactive #44475a #44475a #f8f8f2 #44475a
+client.focused          #bd93f9 #bd93f9 #21222c #ff79c6
+client.focused_inactive #6272a4 #6272a4 #f8f8f2 #44475a
 client.unfocused        #1f1f1f #1f1f1f #f8f8f2 #44475a
 client.urgent           #ff5555 #ff5555 #f8f8f2 #f8f8f2
 client.placeholder      #1f1f1f #1f1f1f #f1fa8c #44475a
 
 # default border width
-new_float  normal 2
-new_window pixel 2
+new_float  normal 3
+new_window pixel 3
 
 # These bindings trigger as soon as you enter the resize mode
 mode "resize" {
@@ -204,6 +204,9 @@ bar {
         inactive_workspace #6272a4 #6272a4 #1f1f1f
         urgent_workspace   #ff5555 #ff5555 #1f1f1f
     }
+  mode hide
+  hidden_state hide
+  # modifier Mod1
 }
 
 focus_follows_mouse no
