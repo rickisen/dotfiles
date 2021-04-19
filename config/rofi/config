@@ -1,9 +1,7 @@
-include ~/.config/rofi/themes/gruvbox-dark-soft.theme
-
 rofi.opacity: 100
 rofi.columns: 1
-rofi.font: Source Code Pro Semibold 10
-rofi.bw: 1
+rofi.font: Source Code Pro Semibold 11
+rofi.bw: 3
 rofi.eh: 1
 rofi.hmode: false
 rofi.terminal: roxterm
@@ -12,19 +10,13 @@ rofi.key: F12
 rofi.rkey: mod1+F2
 rofi.skey: mod1+F3
 
-!rofi.fg: #98d1ce
-!rofi.bg: #0a0f14
-!rofi.hlfg: #c33027
-!rofi.hlbg: #081f2d
-!rofi.bc: #98d1ce
-
 ! Enable the extended coloring options
 rofi.color-enabled: true
 
 !                  bg       border   separator
-rofi.color-window: #0a0f14, #98d1ce, #98d1ce
+rofi.color-window: #1f1f1f, #bd93f9, #8be9fd
 
 !                  bg       fg       bg-alt   hl-bg    hl-fg
-rofi.color-normal: #0a0f14, #98d1ce, #10151b, #081f2d, #d3ebe9
-rofi.color-active: #d26939, #0a0f14, #d26939, #edb54b, #0a0f14
-rofi.color-urgent: #c33027, #d3ebe9, #d26939, #0a0f14, #d3ebe9
+rofi.color-normal: #1a1a1a, #f8f8f2, #282a36, #6272a4, #1f1f1f
+rofi.color-active: #ff79c6, #1f1f1f, #ff79c6, #ffb86c, #1f1f1f
+rofi.color-urgent: #ff5555, #f8f8f2, #ff79c6, #1f1f1f, #f8f8f2
