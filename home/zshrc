@@ -3838,6 +3838,7 @@ alias tool='mpv --no-video --shuffle "https://www.youtube.com/playlist?list=PLES
 alias metallica='mpv --no-video --shuffle "https://www.youtube.com/playlist?list=PLenUrOlreSp6EXV4PJWLEvLIdnacjn-2w"'
 alias nirvana='mpv --no-video --shuffle "https://www.youtube.com/playlist?list=PL2DB335559E3070E3"'
 alias portishead='mpv --no-video --shuffle  "https://www.youtube.com/playlist?list=OLAK5uy_nMft1HP8iD7Wu0f0PfOKfao7r_nrBz6O8"'
+
 alias music='mpv --no-video --shuffle Music'
 
 # like ifconfig
@@ -3849,3 +3850,29 @@ alias getclip="xclip -selection c -o"
 
 # generates a random word
 alias random-word="shuf -n1 /usr/share/dict/american-english"
+
+# alias apts='apt-cache search '
+# alias apti='sudo apt-get install '
+
+# alias inc='sudo ~/bin/intel_backlight'
+# alias dec='sudo ~/bin/intel_backlight half'
+
+# zsh vi-mode plugin
+source "$HOME/.zsh-vim-mode.plugin.zsh"
+
+MODE_CURSOR_VIINS="white steady bar"
+MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #ff0000"
+MODE_CURSOR_VICMD="#aaaaaa steady block"
+MODE_CURSOR_SEARCH="#ff00ff steady underline"
+MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady bar"
+MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
+
+MODE_INDICATOR_VIINS='%F{15}<%F{8}INSERT<%f'
+MODE_INDICATOR_VICMD='%F{10}<%F{2}NORMAL<%f'
+MODE_INDICATOR_REPLACE='%F{9}<%F{1}REPLACE<%f'
+MODE_INDICATOR_SEARCH='%F{13}<%F{5}SEARCH<%f'
+MODE_INDICATOR_VISUAL='%F{12}<%F{4}VISUAL<%f'
+MODE_INDICATOR_VLINE='%F{12}<%F{4}V-LINE<%f'
+# setopt PROMPT_SUBST
+# Note the single quotes
+grml_prompt_addto RPS1 '${MODE_INDICATOR_PROMPT} ${vcs_info_msg_0_}'

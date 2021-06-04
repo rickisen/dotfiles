@@ -27,6 +27,7 @@ ln $args home/xprofile                    ~/.xprofile
 ln $args home/xinitrc                     ~/.xinitrc
 ln $args home/Xresources                  ~/.Xresources
 ln $args home/zshrc                       ~/.zshrc
+ln $args home/zsh-vim-mode.plugin.zsh     ~/.zsh-vim-mode.plugin.zsh
 
 # mutt
 ln $args home/muttrc                      ~/.muttrc
