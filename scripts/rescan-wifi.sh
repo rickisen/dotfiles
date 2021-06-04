@@ -1,1 +1,1 @@
-sudo iwlist wlp2s0 scan
+sudo iwlist wlp52s0 scan
