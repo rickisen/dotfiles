@@ -93,6 +93,7 @@ pacman -S \
   feh \
   xautolock \
   alacritty-terminfo \
+  lxsession-gtk3 \
   alacritty
 
 # browsers ================================

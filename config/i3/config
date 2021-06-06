@@ -250,5 +250,9 @@ focus_on_window_activation urgent
 
 # smart_borders on
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+
 exec_always --no-startup-id gnome-power-manager
+
 exec --no-startup-id aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log
+
+exec --no-startup-id lxpolkit
