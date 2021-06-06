@@ -234,22 +234,34 @@ bindsym $mod+g floating toggle, resize set 1300px 1020px, move position center
 bindsym $mod+y border normal 2
 bindsym $mod+Shift+y border pixel 2
 
+# PiP mode
+bindsym $mod+shift+f [title="__focused__"] floating toggle, move position 1310 710, resize set 600 340
+for_window [instance="PiP"] floating enable, move position 1310 710, resize set 600 340
+assign [instance="PiP"] → output primary
+
 for_window [class=".*"] title_format <span> %class</span> | <b>%title</b>
 
 for_window [instance="PulseMixerFloat"] floating enable
 for_window [instance="PulseMixerFloat"] move position 1310 845
 for_window [instance="PulseMixerFloat"] resize set 600 200
 
+for_window [instance="PulseMixerFloat"] floating enable, move position 1310 845, resize set 600 200
 for_window [instance="MpvFloat"] floating enable
 for_window [instance="QuteFloat"] floating enable
 for_window [class="Godot" instance="Godot_Engine"] floating enable
 for_window [class="Emulator"] floating disable
 
-# no_focus [class="qutebrowser"]
+# Window title format
+for_window [class=".*"] title_format <span size="large">%class</span> | <b>%title</b>
 
 # focus_on_window_activation <smart|urgent|focus|none>
 focus_on_window_activation urgent
 
 # smart_borders on
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+
 exec_always --no-startup-id gnome-power-manager
+
+exec --no-startup-id aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log
+
+exec --no-startup-id lxpolkit

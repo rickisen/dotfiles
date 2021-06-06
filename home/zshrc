@@ -3711,16 +3711,16 @@ zrclocal
 #     test -z "$TMUX" && (tmux attach || tmux new-session)
 # fi
 
-# workaround for handling TERM variable in multiple tmux sessions properly from http://sourceforge.net/p/tmux/mailman/message/32751663/ by Nicholas Marriott
-if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
-  case $(tmux showenv TERM 2>/dev/null) in
-    *256color) ;&
-    TERM=fbterm)
-      TERM=screen-256color ;;
-    *)
-      TERM=screen
-  esac
-fi
+# # workaround for handling TERM variable in multiple tmux sessions properly from http://sourceforge.net/p/tmux/mailman/message/32751663/ by Nicholas Marriott
+# if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
+#   case $(tmux showenv TERM 2>/dev/null) in
+#     *256color) ;&
+#     TERM=fbterm)
+#       TERM=screen-256color ;;
+#     *)
+#       TERM=screen
+#   esac
+# fi
 
 # PERL Path mods ==================================================
 
@@ -3787,9 +3787,9 @@ alias nb='npm run build'
 
 #Misc aliases
 alias p='watch ping -c 1 -w 2 google.com'
-alias todos='grep -irn -A 1 --exclude-dir=node_modules --exclude-dir=".git" --exclude-dir=".next" "TODO\:\|FIXME:" .'
+alias todos='grep -irn -A 1 --exclude-dir=vendor --exclude-dir=node_modules --exclude-dir=".git" --exclude-dir=".next" "TODO\:\|FIXME:" .'
 alias jvim="vim -c 'set filetype=json'"
-alias yvim="vim -c 'set filetype=yml'"
+alias yvim="vim -c 'set filetype=yaml'"
 
 alias cdtemp='cd "$(mktemp -d)"'
 
@@ -3821,34 +3821,41 @@ PATH="$HOME/bin:$PATH"
 # PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
 # eval "$(rbenv init -)"
 
-# KRONANS ==================================================
-# alias test='export AWS_PROFILE=test; kubectl config use-context arn:aws:eks:eu-west-1:656276796760:cluster/KronanPrivate'
-# alias dev='export AWS_PROFILE=dev; kubectl config use-context arn:aws:eks:eu-west-1:567527177510:cluster/KronanPrivate'
-# alias prod='export AWS_PROFILE=prod; kubectl config use-context arn:aws:eks:eu-west-1:100630763588:cluster/KronanPrivate'
-
-kdlog() {
-  kubectl logs --max-log-requests=100 -f -l app=$1 -n acc1 -c $1
-}
-
-kdjlog() {
-  kubectl logs --max-log-requests=100 -f -l app=$1 -n acc1 -c $1 | grep '^{' | jq
+# window title ==================================================
+DISABLE_AUTO_TITLE="true"
+function precmd () {
+  window_title="\033]0;$(basename $PWD)\007"
+  echo -ne "$window_title"
 }
 
 process-for-port() {
   ss -tulpn | grep "$1"
 }
 
+# play some music
 alias radiohead='mpv --no-video --shuffle "https://www.youtube.com/playlist?list=PLukmsaXDPJie7L7Ihn63HJhA6YMp7tUUr"'
 alias tool='mpv --no-video --shuffle "https://www.youtube.com/playlist?list=PLESF6Vbm19P2IGN0wvksh-SYVWWj4lrxN"'
 alias metallica='mpv --no-video --shuffle "https://www.youtube.com/playlist?list=PLenUrOlreSp6EXV4PJWLEvLIdnacjn-2w"'
 alias nirvana='mpv --no-video --shuffle "https://www.youtube.com/playlist?list=PL2DB335559E3070E3"'
 alias portishead='mpv --no-video --shuffle  "https://www.youtube.com/playlist?list=OLAK5uy_nMft1HP8iD7Wu0f0PfOKfao7r_nrBz6O8"'
 
-alias apts='apt-cache search '
-alias apti='sudo apt-get install '
+alias music='mpv --no-video --shuffle Music'
 
-alias inc='sudo ~/bin/intel_backlight'
-alias dec='sudo ~/bin/intel_backlight half'
+# like ifconfig
+alias jfconfig="ip --json addr | jq '[.[] | .addr_info[] | {label: .label, ip: .local}]'"
+
+# clipboard
+alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o"
+
+# generates a random word
+alias random-word="shuf -n1 /usr/share/dict/american-english"
+
+# alias apts='apt-cache search '
+# alias apti='sudo apt-get install '
+
+# alias inc='sudo ~/bin/intel_backlight'
+# alias dec='sudo ~/bin/intel_backlight half'
 
 # zsh vi-mode plugin
 source "$HOME/.zsh-vim-mode.plugin.zsh"
